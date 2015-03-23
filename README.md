@@ -2,7 +2,7 @@
 #####Proyecto#####
 Pet Saviors - Adopción de Mascotas
 #####Integrantes: 
-* José Aguilar
+* Jose Aguilar
 * Kevin Hernández
 * Julián Méndez
 * Jasson Moya 
