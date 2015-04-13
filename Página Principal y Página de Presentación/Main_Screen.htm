@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html hola_ext_inject="ready" lang="en"><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Pet Saviors</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/MainScreen.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/ImageStyle.css">
+</head>
+<!-- NAVBAR
+================================================== -->
+<body hola-ext-player="1">
+  <div class="navbar">
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <img src="Images/LogoLargo.png" height="100" width="670">
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+              <li class="MargenCentrado"><a href="#">Inicio</a></li>
+              <li class="MargenCentrado"><a href="#">Contacto</a></li>
+              <li class="dropdown MargenCentrado">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Explorar <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Adoptar Mascota</a></li>
+                  <li><a href="#">Dar en Adopción</a></li>
+                  <li><a href="#">Algo que haga la progra</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Pet Saviors - Proyect</li>
+                  <li><a href="#">Desarrolladores</a></li>
+                  <li><a href="#">Otra cosa que no sé</a></li>
+                </ul>
+              </li>
+              <li class="popover MargenCentrado">
+                <img src="Images/config.png" height="47" width="50" alt="" role="button" class="configPop">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Carousel
+  ================================================== -->
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+      <li class="active" data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!--Primera pantalla-->
+      <div class="item">
+        <img class="first-slide" src="Images/FondoCarrusel1.png" height="720" width="1800" alt="First slide">
+        <div class="container">
+        <div class="carousel-caption CorrerIzquierda">
+          <h1>¡Adopte una Mascota!</h1>
+          <p>Aquí usted puede darle una nueva vida a los animales que rescatamos. Estos seres necesitan del cuidado y amor de alguien, y ese alguien puede ser usted. Recuerde: No compre animales, adóptelos</p>
+          <p><a class="btn btn-lg btn-primary BotonCar" href="#" role="button">¡Adoptar Ahora!</a></p>
+        </div>
+        </div>
+      </div>
+      <!--Segunda Pantalla-->
+      <div class="item active">
+        <img class="second-slide" src="Images/FondoCarrusel2.png" alt="Second slide">
+        <div class="container">
+        </div>
+      </div>
+      <!--Tercera Pantalla-->
+      <div class="item">
+        <img class="third-slide" src="Images/FondoCarrusel3.png" alt="Third slide">
+        <div class="container">
+          <div class="carousel-caption CorrerDerecha">
+            <h1>¡Rescate Mascotas!</h1>
+            <p>¿Se encontró una mascota que no puede mantener y la quiere dar en adopción? ¡Pet Saviors lo hace por usted!</p>
+            <p><a class="btn btn-lg btn-primary BotonCar" href="#" role="button">¡Rescatar Ahora!</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="sr-only">Next</span>
+    </a>
+    </div><!-- /.carousel -->
+
+
+    <div class="container marketing">
+      <hr>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Nuestras Mascotas. <span class="text-muted">Alguna podría ser suya</span></h2>
+          <p class="lead">En nuestras instalaciones tenemos mascotas en adopción esperando por un dueño que los ame. También, puede contactar a las personas que tienen mascotas en adopción</p>
+        </div>
+        <div class="col-md-5">
+          <img class="img-circle Sombra" data-holder-rendered="true" src="Images/Animales.png" height="500" width="500" data-src="holder.js/500x500/auto" alt="500x500" role="button">
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Nuestros Rescatistas. <span class="text-muted">Amigos de los animales</span></h2>
+          <p class="lead">Conozca a las personas que ayudan un animal al rescatarlo de las calles y cuidarlo temporalmente</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="img-circle Sombra" data-holder-rendered="true" src="Images/Rescatistas.png" data-src="holder.js/500x500/auto" alt="500x500" role="button">
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      <div class="row-fluid">
+        <div class="jumbotron FormatoTexto">
+          <h2>¡Continúe ayudando a la causa!</h2>
+          <p>Si piensa que puede ayudar de alguna otra manera a la fundación Pet Saviors, no dude en contactarnos a los números de teléfonos, o en nuestras oficinas. Cada pequeña acción que usted hace a favor de un animal, lo convierte en mejor persona</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <hr class="featurette-divider">
+      <!-- /END THE FEATURETTES -->
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>© 2014 Pet Saviors - Dream Team, Inc.</p>
+      </footer>
+      </div><!-- /.container -->
+
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <!--Script para el popover-->
+      <script src="JS/PopoverScript.js"></script>
+      
+    <svg style="visibility: hidden; position: absolute; top: -100%; left: -100%;" preserveAspectRatio="none" viewBox="0 0 500 500" height="500" width="500"><defs></defs><text style="font-weight:bold;font-size:23pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle" y="23" x="0">500x500</text></svg></body></html>
