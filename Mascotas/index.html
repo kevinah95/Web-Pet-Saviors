@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet Saviors - Mascotas</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css"  type="text/css" rel="stylesheet">
+
+     <!-- Angular   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+  </head>
+  <body ng-app= "myapp">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-nzavbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Pet Saviors</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a>Usuarios</a></li>
+                    <li><a>Mascotas</a></li>
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Contacto <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a>Acerca de</a></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">PROYECTO</li>
+                        <li class="divider"></li>
+                        <li><a>Desarrolladores</a></li>
+                        <li><a>Documentación</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>¡Bienvenido a la página de Mascotas!</h1>
+            <p><a href = "petCatalogue.html" class="btn btn-primary btn-large">¡Explore todas las mascotas!</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Últimos registros</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div ng-controller = "PostsCtrl">
+            Buscar: <input ng-model="search.Nombre">
+            <hr>
+
+            <div class="row text-center" >
+            
+            <!--Cada cuadro-->
+            <div class="col-md-3 col-md-2 hero-feature" ng-repeat = 'post in posts | filter:search:strict | limitTo: 5'>
+                <div class="thumbnail">
+                <img ng-src = {{post.FotoAntes}} alt = "">
+                    <div class="caption">
+                        <h3 href = "#">{{post.Nombre}}</h3>
+                        <p href = "#">{{post.Descripcion}}</p>                        
+                        <p>
+                            <a class="btn btn-primary">¡Adóptelo!</a>
+                            <a class="btn btn-default">Más información</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--Fin cada cuadro-->
+
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © Pet Saviors 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!--Este script toma la información de la Base de Datos para generar los containers-->
+    <script>
+        angular.module("myapp", []).controller("PostsCtrl", function($scope, $http) {
+            $http.get('conectPetTable.php').success(function(data) { $scope.posts = data; })
+        });
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
