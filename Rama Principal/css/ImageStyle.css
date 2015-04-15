@@ -1,0 +1,103 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+.home {
+background: url(../Images/fondo1.png) 50% 0 fixed;
+height: auto;
+margin: 0 auto;
+max-width: 100%;
+position: relative;
+/*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+padding: 400px 0;
+}
+.about {
+/*background: url(../Images/patas.png) 50% 0 fixed;*/
+background-color: #9f7353;
+height: auto;
+margin: 0 auto;
+width: 100%;
+position: relative;
+box-shadow: 5px 5px 50px rgba(0,0,0,0.8);
+padding: 100px 0;
+color: #fff;
+}
+.nueva {
+	background: url(../Images/PerroPrueba.jpg) 50% 0 fixed;
+/*	background-color: #9f7353;*/
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	box-shadow: 0 0 50px rgba(0,0,0,0.8) inset;
+	padding: 400px 0;
+	color: #fff;
+}
+.Abajo {
+	background-color: #887474;
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	/*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+	padding: 100px 0;
+	color: #fff;
+}
+
+.Logo {
+margin: 10px;
+}
+.btn-xlarge {
+    padding: 28px 28px;
+    font-size: 22px;
+    line-height: normal;
+    background-color: #c89f6e;
+    border: #c89f6e;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+       -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+            box-shadow: 0 2px 10px rgba(0,0,0,.25);
+	font-family: "Ubuntu", Georgia, Serif; 
+}
+.MargenCentrado {
+	margin-top: 24px;
+	font-size: 18px;
+	font-family: "Ubuntu";
+	background-color: #784747;
+	border-radius: 12px;
+}
+.BotonPop {
+	color: #171616;
+}
+.BotonPop:hover {
+	color: #bba3a9;
+}
+.CorrerIzquierda {
+	margin-right: 550px;
+	margin-bottom: 70px;
+}
+.CorrerDerecha {
+	margin-left: 550px;
+	margin-bottom: 70px;
+}
+.BotonCar {
+	background-color: #c89f6e;
+	border: #c89f6e;
+}
+.Sombra {
+	-webkit-box-shadow: -12px 15px 20px rgba(0,0,0,.25);
+    -moz-box-shadow: -12px 15px 20px rgba(0,0,0,.25);
+         box-shadow: -12px 15px 20px rgba(0,0,0,.25);
+}
+.FormatoTexto{
+	text-align: center;
+}
+.FormatoTexto > h2 {
+	color: #f1e7e7;
+}
+.FormatoTextoDos {
+	text-align: center;
+	font-size: 25px;
+	text-shadow: 0.1em 0.1em 0.2em black;
+}
+.ColorFondo {
+	background-color: #887474;
+}

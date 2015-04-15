@@ -1,0 +1,52 @@
+<div class="container" role="pagLogin" >
+	<div class="row" id="pwd-container">
+		<div class="col-md-4"></div>
+		
+		<div class="col-md-4">
+			<section class="login-form">
+				<form  role="login" name="formLogin" class="form-login" ng-submit="login(user)"  novalidate> <!-- agregar method="post" ng-submit="formLogin.$valid" -->
+				<div class="text-center"><h3>Ingresar a PetSaviors</h3></div>
+				
+				<!-- <hr> -->
+				<input type="email" name="email" ng-model="user.mail" placeholder="Correo Electrónico" class="form-control input-md" required autofocus />
+				<input type="password" class="form-control input-md" ng-model="user.pass" id="password" placeholder="Contraseña" required/>
+				<button type="submit" id="submit" ng-disabled="formLogin.$invalid" class="btn btn-lg btn-success btn-block">Ingresar</button>
+				<!-- {{formLogin.$valid}} -->
+								
+			</form>
+		</section>
+	</div>
+	
+	<div class="col-md-4">
+		<section class="registro-form">
+			<form class="form-registro" name="formRegistro" role="registro" ng-submit="crear(newUsuario)" ng-controller="registroCtrl" ng-init="" novalidate> <!-- agregar method="post" ng-submit="formLogin.$valid" -->
+			<div class="text-center">
+				<h3><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Crear nueva cuenta</h3>
+			</div>
+			
+			<input class="form-control" ng-model="newUsuario.nombre" name="nombre" placeholder="Nombre" type="text" required />
+			<input class="form-control" ng-model="newUsuario.p_apellido" name="p_apellido" placeholder="Primer Apellido" type="text" required />
+			<input class="form-control" ng-model="newUsuario.s_apellido" name="s_apellido" placeholder="Segundo Apellido" type="text" required />
+			<input class="form-control" ng-model="newUsuario.telefono" name="telefono" placeholder="Teléfono" type="text" required/>
+			<input class="form-control" ng-model="newUsuario.correo" name="correo" placeholder="Correo Electrónico" type="email" required/>
+			<input class="form-control" ng-model="newUsuario.contrasenia" name="contrasenia" placeholder="Contraseña" type="password" required/>
+			
+				
+				<input type="checkbox" id="checkAdoptante" role="checkbox" ng-model="newUsuario.es_adoptante" ng-init="newUsuario.es_adoptante = false" >
+				<label for="inlineCheckboxAdoptante">Adoptante</label>
+				
+				<input type="checkbox" id="checkCheckboxRescatista" role="checkbox" ng-model="newUsuario.es_rescatista" ng-init="newUsuario.es_rescatista = false">
+				<label for="inlineCheckboxRescatista">Rescatista</label>
+			
+			<!-- <div class="form-group">
+					<label for="InfoAdicional">Información Adicional:</label>
+					<textarea class="form-control" ng-model="newUsuario.notas" rows="3" id="InfoAdicional"></textarea>
+			</div> -->
+			<!-- <br /> -->
+			<button class="btn btn-lg btn-danger btn-block" ng-disabled="formRegistro.$invalid || (!newUsuario.es_adoptante && !newUsuario.es_rescatista)" type="submit">
+			Crear Cuenta</button>
+		</form>
+	</section>
+</div>
+</div>
+</div>
