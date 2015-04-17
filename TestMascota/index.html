@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Test de Adopción</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+    <div class="row">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-4 well well-sm text-center"> -->
+        <div class="col-md-3"></div>
+        <div class="col-md-12">
+            <section class="registro-form">
+                <div class="text-center"><h1><span class="label label-default">Test de Adopción</span></h1></div>
+                <form class="form" role="agregarMascota" novalidate>
+                    <div class="row">
+                       <!--Columa 1--> 
+                      <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿De qué tamaño le gustaría que fuera su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res1">Pequeña (Hasta 10 kilogramos)</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res1">Mediana (Entre 10 y 25 kilogramos)</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res1">Grande (Desde 25 kilogramos)</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res1">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Qué tan energética debería ser su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res2">Muy energético, un corredor</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res2">Medianamente energético, un trotador</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res2">Poco energético, perezoso</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res2">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Cuánto tiempo podría dedicar a ejercitar su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res3">Entre 40 y 60 minutos al día</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res3">Entre 15 y 30 minutos al día</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res3">Menos de 15 minutos</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res3">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Columa 2--> 
+                      <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Qué tan seguido está dispuesto a jugar con ella?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res4">Todo el día</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res4">Algunas veces al día</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res4">Una vez al día</label>
+                            </div>
+                             <div class="radio">
+                              <label><input type="radio" name="res4">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Qué tan afectiva debe ser su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res5">Inseparable</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res5">Me reciba alegremente</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res5">Quiero solamente un compañerp</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res5">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Posee otras mascotas en su casa?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res6">Si, tiene que se amigable</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res6">No, pero pienso tener en un futuro</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res6">Es para cuido, no amistoso</label>
+                            </div>
+                             <div class="radio">
+                              <label><input type="radio" name="res6">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Columa 3--> 
+                      <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Qué tan entrenable debe ser su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res7">Pienso enseñarle muchos trucos</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res7">Sólo debe aprender instrucciones básicas</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res7">No tiene que ser entrenable</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res7">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Qué tan protectora debe ser su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res8">Mucho, es un animal de cuido</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res8">Algo, pero no lo requiere</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res8">No necesita ser protector</label>
+                            </div>
+                             <div class="radio">
+                              <label><input type="radio" name="res8">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="thumbnail" style="border:5px solid #543D14">
+                          <div class="caption">
+                            <h3>¿Cuánto espacio puede destinar a su mascota?</h3> <!--Aqui va la pregunta-->
+                            <!--Aqui van las respuestas en radiobuttons-->
+                            <div class="radio">
+                              <label><input type="radio" name="res9">Más de 100 metros cuadrados</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res9">Entre 20 y 80 metros cuadrados</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res9">Debe estar dentro de la casaa</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="res9">No importa</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block" ng-click="crear(newUsuario)" type="submit" >
+                    Evaluar Respuestas</button>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-4"></div>
+        <!-- </div> -->
+    </div>
+</div>
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
