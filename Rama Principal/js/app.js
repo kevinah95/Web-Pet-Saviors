@@ -4,6 +4,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/inicio', {templateUrl: 'partials/inicio.html', controller:'inicioCtrl'});
   $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller:'loginCtrl', css: 'css/login.css'});//, controller:'loginCtrl'}); //llama a partials/login.html y usa el loginCtrl.js
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller:'homeCtrl'});
+  $routeProvider.when('/perfil', {templateUrl: 'partials/perfil.html', controller: 'perfilCtrl'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 

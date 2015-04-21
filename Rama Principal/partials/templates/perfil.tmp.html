@@ -1,0 +1,64 @@
+<div class="container">
+            <div class="row">
+                <div class="col-md-5  toppad  pull-right col-md-offset-3 Padding">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+                    <div class="panel panel-info Sombra ColorHeading">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">¡Hola amante de los animales!</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" ng-src="{{masterUsuario.FOTO}}" class="img-circle NewSize"> </div>
+                                
+                                <div class=" col-md-9 col-lg-9">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                            <tr>
+                                                <td>Nombre:</td>
+                                                <td>{{masterUsuario.NOMBRE}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Primer apellido</td>
+                                                <td>{{masterUsuario.P_APELLIDO}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Segundo apellido</td>
+                                                <td>{{masterUsuario.S_APELLIDO}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Correo Electrónico:</td>
+                                                <td>{{masterUsuario.CORREOUSUARIO}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teléfono</td>
+                                                <td>{{masterUsuario.TELEFONO}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Usted se encuentra clasificado como:</td>
+                                                <td>Adoptante <input type="checkbox" ng-checked="masterUsuario.ES_ADOPTANTE" aria-label="Slave input"><br><br>Rescatista <input type="checkbox" ng-checked="masterUsuario.ES_RESCATISTA" aria-label="Slave input"><br><br>Administrador</td>
+                                                
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Calificación:</td>
+                                                <td>Buena</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    <a href="" class="btn btn-success">Mis mascotas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer Grande">
+                            <span class="pull-right">
+                                <a href="" data-original-title="Edit this user" type="button" class="btn btn-sm btn-warning">Editar Perfil</a>
+                                <a href="" data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Eliminar Perfil</a>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
