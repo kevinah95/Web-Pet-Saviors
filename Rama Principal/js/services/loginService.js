@@ -1,5 +1,5 @@
 'use strict';
-app.factory('loginService',function($http, $location, sessionService){
+app.factory('loginService',function($http, $location, sessionService, masterService){
 	return{
 		login:function(data,scope){
 			var $promise=$http.post('data/verificarUsuario.php',data); //send data to user.php
@@ -8,7 +8,9 @@ app.factory('loginService',function($http, $location, sessionService){
 				if(uid){
 					//scope.msgtxt='Correct information';
 					sessionService.set('uid',uid);
+					masterService.getUsuarioInfo(data,scope);
 					$location.path('/home');
+
 				}	       
 				else  {
 					swal("Información Incorrecta", "Su correo de usuario o contraseña no coinciden con nuestros clientes", "error");
@@ -27,7 +29,8 @@ app.factory('loginService',function($http, $location, sessionService){
 			if(sessionService.get('user')) return true;
 			else return false;
 			*/
-		},
+		}
+
 		
 		
 

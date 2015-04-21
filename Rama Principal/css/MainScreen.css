@@ -133,3 +133,7 @@ body {
     margin-top: 120px;
   }
 }
+
+.ImagenCir{
+  -webkit-clip-path: circle(10px at center);
+}

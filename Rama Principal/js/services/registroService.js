@@ -2,7 +2,7 @@
 app.factory('registroService',function($http, $location){
 	return{
 		crear:function(data,scope){
-			var $promise=$http.post('data/newUsuario.php',data); //send data to user.php
+			var $promise=$http.post('data/crearUsuario.php',data); //send data to user.php
 			$promise.then(function(msg){
 				if (msg.data === 'Error'){
 					swal("Información Incorrecta", "Su correo de usuario ya pertenece a uno de nuestros usuarios", "error");
