@@ -7,7 +7,7 @@ app.factory('loginService',function($http, $location, sessionService, masterServ
 				var uid=msg.data;
 				if(uid){
 					//scope.msgtxt='Correct information';
-					sessionService.set('uid',uid);
+					sessionStorage.setItem("islogged" , true);
 					masterService.getUsuarioInfo(data,scope);
 					$location.path('/home');
 
@@ -19,16 +19,15 @@ app.factory('loginService',function($http, $location, sessionService, masterServ
 			});
 		},
 		logout:function(){
-			sessionService.destroy('uid');
+			sessionService.destroy('user');
+			sessionService.destroy('islogged');
 			$location.path('/login');
 		},
-		islogged:function(){
-			var $checkSessionServer=$http.post('data/check_session.php');
-			return $checkSessionServer;
-			/*
-			if(sessionService.get('user')) return true;
+		islogged: function(){
+			var logeado = sessionStorage.getItem("islogged"); 
+
+			if (logeado) return true;
 			else return false;
-			*/
 		}
 
 		

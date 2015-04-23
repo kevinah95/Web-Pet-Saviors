@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-init="inicializar()">
             <div class="row">
                 <div class="col-md-5  toppad  pull-right col-md-offset-3 Padding">
                 </div>
@@ -36,7 +36,9 @@
                                             </tr>
                                             <tr>
                                                 <td>Usted se encuentra clasificado como:</td>
-                                                <td>Adoptante <input type="checkbox" ng-checked="masterUsuario.ES_ADOPTANTE" aria-label="Slave input"><br><br>Rescatista <input type="checkbox" ng-checked="masterUsuario.ES_RESCATISTA" aria-label="Slave input"><br><br>Administrador</td>
+                                                <td><p ng-show="masterUsuario.ES_ADOPTANTE">Adoptante</p>
+                                                <p ng-show="masterUsuario.ES_RESCATISTA">Rescatista</p>
+                                                <p ng-show="masterUsuario.ES_ADMINISTRADOR">Administrador</p></td>
                                                 
                                                 
                                             </tr>
@@ -53,7 +55,7 @@
                         </div>
                         <div class="panel-footer Grande">
                             <span class="pull-right">
-                                <a href="" data-original-title="Edit this user" type="button" class="btn btn-sm btn-warning">Editar Perfil</a>
+                                <a href="" ng-click="editarPerfil()" data-original-title="Edit this user" type="button" class="btn btn-sm btn-warning">Editar Perfil</a>
                                 <a href="" data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Eliminar Perfil</a>
                             </span>
                         </div>

@@ -1,7 +1,15 @@
 'use strict';
 
-app.controller('perfilCtrl', ['$scope', '$location','$rootScope', function($scope,$location,$rootScope){
+app.controller('perfilCtrl', ['$scope', '$location', function($scope,$location){
 	
-	$scope.masterUsuario = $rootScope.usuario;
-	
+
+	$scope.inicializar = function() {
+    	$scope.masterUsuario=JSON.parse(sessionStorage.user); 
+    	// console.log($scope.masterUsuario);
+    	
+  	};
+  	$scope.editarPerfil = function(){
+  		$location.path('/editarPerfil');
+  	};
+
 }]);

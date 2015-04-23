@@ -1,0 +1,60 @@
+<div class="container" ng-init="inicializar()">
+    <div class="row">
+        <div class="col-md-5  toppad  pull-right col-md-offset-3"></div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+            <div class="panel panel-info Sombra ColorHeading">
+                <div class="panel-heading">
+                    <h3 class="panel-title">A continuación, sus opciones para cambiar.</h3>
+                </div>
+                <form name="edicionForm">
+                    <div class="panel-body">
+                        <div class="thumbnail">
+                            
+                            <img alt="User Pic" width = "150px" height = "150px" ng-src="{{editadoUsuario.FOTO}}">
+                            <p class="text-center"><input id="inputName" type="text" placeholder="URL de la nueva imagen" ng-model="editadoUsuario.FOTO" required></p>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-15 col-lg-15">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <!--Poner variable con el dato de la db en el placeholder -->
+                                        <tr class= "text-center">
+                                            <td>Nombre:</td>
+                                            <td><input id="inputName" type="text" placeholder="{{editadoUsuario.NOMBRE}}" ng-model="editadoUsuario.NOMBRE" required></tr>
+                                        </tr>
+                                        <tr class= "text-center">
+                                            <td>Primer apellido</td>
+                                            <td><input id="inputFLName" type="text" placeholder="{{editadoUsuario.P_APELLIDO}}" ng-model="editadoUsuario.P_APELLIDO" required></tr>
+                                        </tr>
+                                        <tr class= "text-center">
+                                            <td>Segundo apellido</td>
+                                            <td><input id="inputSLName" type="text" placeholder="{{editadoUsuario.S_APELLIDO}}" ng-model="editadoUsuario.S_APELLIDO" required></tr>
+                                        </tr>
+                                        <tr class= "text-center">
+                                            <td>Teléfono</td>
+                                            <td><input id="inputPhone" type="text" placeholder="{{editadoUsuario.TELEFONO}}" ng-model="editadoUsuario.TELEFONO" required></tr>
+                                            <!-- <p ng-show="editadoUsuario.TELEFONO.$error.pattern">Numbers only, please.</p> -->
+                                        </tr>
+                                        <tr class= "text-center">
+                                            <td>Es usted un usuario de tipo: </td>
+                                            <td>
+                                                <p><input type = "checkbox" ng-checked = "{{editadoUsuario.ES_ADOPTANTE}}" ng-model="ADOPTANTE" ng-click="booleanos()"> Adoptante</p>
+                                                <p><input type = "checkbox" ng-checked = "{{editadoUsuario.ES_RESCATISTA}}" ng-model="RESCATISTA" ng-click="booleanos()"> Rescatista</p>
+                                                <!-- <p>Administrador</p> -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="panel-footer text-center Grande">
+                        <a href="" ng-click="verificarDatos()"data-original-title="Edit this user" type="button" class="btn btn-sm btn-success">Confirmar Cambios</a>
+                        <a href="" data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Eliminar mi perfil :(</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

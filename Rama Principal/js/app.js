@@ -1,10 +1,11 @@
-var app = angular.module('loginApp',['ngRoute']);
+var app = angular.module('PetSaviorsApp',['ngRoute','ngCookies']);
 app.config(['$routeProvider', function($routeProvider) {
   // $routeProvider.when(path,route) en path es cuendo en la barra del navegador accedo a http://localhost/login-angularjs/app/#{/path} por ejemplo.
   $routeProvider.when('/inicio', {templateUrl: 'partials/inicio.html', controller:'inicioCtrl'});
   $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller:'loginCtrl', css: 'css/login.css'});//, controller:'loginCtrl'}); //llama a partials/login.html y usa el loginCtrl.js
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller:'homeCtrl'});
   $routeProvider.when('/perfil', {templateUrl: 'partials/perfil.html', controller: 'perfilCtrl'});
+  $routeProvider.when('/editarPerfil', {templateUrl: 'partials/editarPerfil.html',controller: 'editarperfilCtrl'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
@@ -14,12 +15,16 @@ app.run(function($rootScope , $location, loginService){
 	
 	$rootScope.$on('$routeChangeStart',function(){
 		if( routespermission.indexOf($location.path()) != -1 ){
-			var connected = loginService.islogged();
-			// then() called when connected gets back the $http.post('path')
-			connected.then(function(msg){
-				if(!msg.data) $location.path('/login');
-			});
+			var connected = loginService.islogged(); 
 			
+			if (!connected){
+				$location.path('/login');	
+				// console.log(connected);
+			}
+					
+				
+			
+
 		}
 	});
 
