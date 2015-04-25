@@ -11,5 +11,8 @@ app.controller('perfilCtrl', ['$scope', '$location', function($scope,$location){
   	$scope.editarPerfil = function(){
   		$location.path('/editarPerfil');
   	};
+  	$scope.volver = function(){
+  		$location.path('/home');	
+  	};
 
 }]);

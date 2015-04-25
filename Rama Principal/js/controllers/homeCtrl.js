@@ -7,5 +7,8 @@ app.controller('homeCtrl', ['$scope','loginService', '$location', function($scop
 	$scope.verperfil=function(){
 		$location.path('/perfil');
 	};
+	$scope.registrarMascota=function(){
+		$location.path('/registrarMascota');
+	};
 
 }]);

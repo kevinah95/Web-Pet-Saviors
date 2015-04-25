@@ -46,6 +46,11 @@
                                                 <td>Calificación:</td>
                                                 <td>Buena</td>
                                             </tr>
+                                            <tr class= "text-center">
+                                            <td>Notas</td>
+                                            <td><textarea class="form-control" rows="3" ng-model="masterUsuario.NOTAS" required></textarea>
+                                             </tr>
+                                        </tr>
                                         </tbody>
                                     </table>
                                     
@@ -56,7 +61,7 @@
                         <div class="panel-footer Grande">
                             <span class="pull-right">
                                 <a href="" ng-click="editarPerfil()" data-original-title="Edit this user" type="button" class="btn btn-sm btn-warning">Editar Perfil</a>
-                                <a href="" data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Eliminar Perfil</a>
+                                <a href="" ng-click="volver()"data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Volver</a>
                             </span>
                         </div>
                         
