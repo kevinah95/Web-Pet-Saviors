@@ -19,6 +19,10 @@ body {
 	font-size: 35px;
 	color: #E0D9D7;
 }
+
+.Padding {
+	padding-top: 2%;
+}
 .NewSize {
 	height: 100px;
 	width: 100px;
