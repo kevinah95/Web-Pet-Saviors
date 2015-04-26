@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet Saviors - Mascotas</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css"  type="text/css" rel="stylesheet">
+
+     <!-- Angular   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+  </head>
+  <body ng-app= "myapp">
+
+    <!-- Page Content -->
+    <div class="container">
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Últimos registros</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div ng-controller = "PostsCtrl">
+            Buscar: <input ng-model="search.Nombre">
+            <hr>
+
+            <div class="row text-center" >
+            
+            <!--Cada cuadro-->
+            <div class="col-md-3 col-md-2 hero-feature" ng-repeat = 'post in posts | filter:search:strict | limitTo: 5'>
+                <div class="thumbnail">
+                <img ng-src = {{post.FotoAntes}} alt = "">
+                    <div class="caption">
+                        <h3 href = "#">{{post.Nombre}}</h3>
+                        <p href = "#">{{post.Descripcion}}</p>                        
+                        <p>
+                            <a class="btn btn-primary">¡Adóptelo!</a>
+                            <a class="btn btn-default">Más información</a>
+                            <a class="btn btn-default" href="mailto:menoc.sk27@gmail.com
+                            ?subject=  Ví a tu mascota {{post.Nombre}} y ¡Quiero saber más! 
+                            &body= Cuéntame cosas específicas acerca de {{post.Nombre}} y dónde está, para ponernos en contacto">
+                            Enviar correo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--Fin cada cuadro-->
+
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © Pet Saviors 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!--Este script toma la información de la Base de Datos para generar los containers-->
+    <script>
+        angular.module("myapp", []).controller("PostsCtrl", function($scope, $http) {
+            $http.get('conectPetTable.php').success(function(data) { $scope.posts = data; })
+        });
+
+    </script>
+    <script type="text/javascript">
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
