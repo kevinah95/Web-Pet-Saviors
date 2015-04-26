@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css"
+            rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/ProfileStyle.css">
+    </head>
+        
+    <body>
+        <div class="container">
+            <div class="row">
+<!--                 <div class="col-md-5  toppad  pull-right col-md-offset-3 Padding">
+                </div> -->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 toppad centrar" id="firstPanel">
+                    <div class="panel panel-info Sombra ColorHeading">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://www.bestfon.info/images/joomgallery/originals/animales_7/animal_118_20120518_1511321022.jpg" class="img-rounded NewSize"> </div>
+                            </div>
+                                
+                            <div class = "row">
+                                <div class=" col-md-12 col-lg-12" align="center">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                            <tr>
+                                                <td>Tipo: </td>
+                                                <td>//Tipo//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Raza: </td>
+                                                <td>//Raza//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nombre: </td>
+                                                <td>//Nombre//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tamaño: </td>
+                                                <td>//Tamaño//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Energía: </td>
+                                                <td>//Energía//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pelaje: </td>
+                                                <td>//Pelaje//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Color: </td>
+                                                <td>//Color//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Entrenamiento: </td>
+                                                <td>//Entrenamiento//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Espacio Requerido: </td>
+                                                <td>//Espacio Requerido//</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    <button class="btn btn-success" id="btnSalud">Mostrar Salud</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 toppad Esconder" id="SecondPanel">
+                    <div class="panel panel-info Sombra ColorHeading">
+                        <div class="panel-body">
+                            <div class="row">
+                                <h3 align="center">Foto de cuando se encontró:</h3>
+                                <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://img.fondosypantallas.com/wp-content/uploads/2009/01/ph-11139.jpg" class="img-rounded NewSize"> </div>
+                            </div>
+                            <div class = "row">
+                                <div class=" col-md-12 col-lg-12" align="center">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado del animal: </td>
+                                                <td>//Estado del animal//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Enfermedades: </td>
+                                                <td>//Enfermedades//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tratamientos: </td>
+                                                <td>//Tratamientos//</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Medicamentos: </td>
+                                                <td>//Medicamentos//</td>
+                      
+                                            </tr>
+                                            <tr>
+                                                <td>Veterinario: </td>
+                                                <td>//Veterinario//</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $("#SecondPanel").hide();
+
+            var changeFlag = true;
+            $("#btnSalud").click(function(){
+                if(changeFlag) {
+                    $("#btnSalud").text("Ocultar Salud");
+                    $("#firstPanel").animate({
+                        marginLeft: '0px'
+                    }, 'slow');
+                    $("#SecondPanel").show('slow');
+                    changeFlag = false;
+                }
+                else {
+                    $("#btnSalud").text("Mostrar Salud");
+                    $("#firstPanel").animate({
+                        marginLeft: '18%'
+                    }, 'slow');
+                    $("#SecondPanel").hide('slow');
+                    changeFlag = true;
+                }
+            })
+
+        </script>
+    </body>
+</html>
