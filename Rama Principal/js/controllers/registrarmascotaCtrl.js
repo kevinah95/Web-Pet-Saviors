@@ -34,6 +34,14 @@ app.controller('registrarmascotaCtrl', ['$scope', '$location', '$http',
         	$scope.razaSeleccionada = razaAnimal;
         };
 
+        $scope.crear = function(mascota){
+            // console.log(mascota);
+            var $promise = $http.post('data/crearMascota.php', mascota); //send data to user.php
+            $promise.then(function(msg) {
+                console.log(msg);
+            });
+        };
+
 
     }
 ]);
