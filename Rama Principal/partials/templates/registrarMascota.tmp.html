@@ -1,26 +1,25 @@
-<form ng-init="inicializar()">
-    <div class="container" id = "regMascotas">
-        <div class="row">
-            <!-- <div class="col-xs-12 col-sm-12 col-md-4 well well-sm text-center"> -->
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <section class="registro-form">
-                    <div class="text-center"><h1><span class="label label-default">Registra una Mascota</span></h1></div>
-                    <form class="form" role="agregarMascota" novalidate> <!-- agregar method="post" ng-submit="formLogin.$valid" -->
-                    <div class="form-group"><!--Select de tipos-->
-                    <label for="sel1">Tipo de Mascota:</label>
-                    <div class="dropdown">
-                        <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                        {{tipoSeleccionado}}
-                        <!-- <span class="caret"></span> -->
-                        </button>
-                        <ul class="dropdown-menu btn-block scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation" ng-repeat="tipo in tipos">
-                                <a role="menuitem" tabindex="-1" ng-click="getRazaAnimal(tipo.NOMBRE_TIPO)">{{tipo.NOMBRE_TIPO}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
+<div class="container" id = "regMascotas" ng-init="inicializar()">
+    <div class="row">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-4 well well-sm text-center"> -->
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <section class="registro-form">
+                <div class="text-center"><h1><span class="label label-default">Registra una Mascota</span></h1></div>
+                <form class="form" role="agregarMascota" name="formRegistroMascota" ng-submit="crear(newMascota)" novalidate> <!-- agregar method="post" ng-submit="formLogin.$valid" -->
+                <div class="form-group"><!--Select de tipos-->
+                <label for="sel1">Tipo de Mascota:</label>
+                <div class="dropdown">
+                    <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                    {{newMascota.tipo}}
+                    <!-- <span class="caret"></span> -->
+                    </button>
+                    <ul class="dropdown-menu btn-block scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" ng-repeat="tipo in tipos">
+                            <a role="menuitem" tabindex="-1" ng-click="getRazaAnimal(tipo.NOMBRE_TIPO)">{{tipo.NOMBRE_TIPO}}</a>
+                        </li>
+                    </ul>
+                </div>
+                
                 
                 
                 <div class="dropup">
@@ -29,98 +28,95 @@
                 <label for="sel1">Raza de Mascota:</label>
                 
                 <div class="dropdown">
-                        <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                        {{razaSeleccionada}}
-                        <!-- <span class="caret"></span> -->
-                        </button>
-                        <ul class="dropdown-menu btn-block scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation" ng-repeat="raza in razas">
-                                <a role="menuitem" tabindex="-1" ng-click="seleccionRaza(raza.NOMBRE_RAZA)">{{raza.NOMBRE_RAZA}}</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                    {{newMascota.raza}}
+                    <!-- <span class="caret"></span> -->
+                    </button>
+                    <ul class="dropdown-menu btn-block scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" ng-repeat="raza in razas">
+                            <a role="menuitem" tabindex="-1" ng-click="seleccionRaza(raza.NOMBRE_RAZA)">{{raza.NOMBRE_RAZA}}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <!--Nombre-->
-            <input class="form-control" ng-model="newMascota.nombre" name="nombre" placeholder="Nombre" type="text"/>
+            <input class="form-control" ng-model="newMascota.nombre" name="nombre" placeholder="Nombre" type="text" required />
             <!--Descripción-->
-            <textarea class="form-control" rows="4" style="margin:10px 0" name="descripcion" placeholder="Descripción breve" type="text" ng-model="newMascota.descripcion"></textarea>
+            <textarea class="form-control" rows="4" style="margin:10px 0" name="descripcion" placeholder="Descripción breve" type="text" ng-model="newMascota.descripcion" required></textarea>
             <div class="form-group"><!--Select de Tamanio-->
             <label for="sel1">Tamaño:</label>
-            <label class="radio-inline"><input type="radio" ng-model="newMascota.tamanio" value="pequeño">Pequeño</label>
+            <label class="radio-inline"><input type="radio" ng-model="newMascota.tamanio" value="pequeño" required>Pequeño</label>
             <label class="radio-inline"><input type="radio" ng-model="newMascota.tamanio" value="mediano">Mediano</label>
             <label class="radio-inline"><input type="radio" ng-model="newMascota.tamanio" value="grande">Grande</label>
         </div>
         <div class="form-group"><!--Select de Energia-->
         <label for="sel1">Energía:</label>
-        <label class="radio-inline"><input type="radio" ng-model="newMascota.energia" value="perezoso">Perezoso</label>
+        <label class="radio-inline"><input type="radio" ng-model="newMascota.energia" value="perezoso" required>Perezoso</label>
         <label class="radio-inline"><input type="radio" ng-model="newMascota.energia" value="moderado">Moderado</label>
         <label class="radio-inline"><input type="radio" ng-model="newMascota.energia" value="activo">Activo</label>
     </div>
     <div class="form-group"><!--Select de Pelaje-->
     <label for="sel1">Pelaje:</label>
-    <label class="radio-inline"><input type="radio" ng-model="newMascota.pelaje" value="corto">Corto</label>
+    <label class="radio-inline"><input type="radio" ng-model="newMascota.pelaje" value="corto" required>Corto</label>
     <label class="radio-inline"><input type="radio" ng-model="newMascota.pelaje" value="medio">Medio</label>
     <label class="radio-inline"><input type="radio" ng-model="newMascota.pelaje" value="largo">Largo</label>
 </div>
 <div class="form-group"><!--Select de Color-->
 <label for="sel1">Color:</label>
-<label class="checkbox-inline"><input type="checkbox" ng-model="newMascota.color.negro" value="negro">Negro</label>
-<label class="checkbox-inline"><input type="checkbox" ng-model="newMascota.color.blanco" value="blanco">Blanco</label>
-<label class="checkbox-inline"><input type="checkbox" ng-model="newMascota.color.cafe" value="cafe">Café</label>
-<label class="checkbox-inline"><input type="checkbox" ng-model="newMascota.color.gris" value="gris">Gris</label>
-<label class="checkbox-inline"><input type="checkbox" ng-model="newMascota.color.dorado" value="dorado">Dorado</label>
-<label class="checkbox-inline"><input type="checkbox" ng-model="newMascota.color.otro" value="otro">Otro</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.color" value="Negro" required>Negro</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.color" value="Blanco">Blanco</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.color" value="Café">Café</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.color" value="Gris">Gris</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.color" value="Dorado">Dorado</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.color" value="Otro">Otro</label>
 </div>
 <div class="form-group"><!--Select de Entrenamiento-->
 <label for="sel1">Entrenamiento:</label>
-<label class="radio-inline"><input type="radio" ng-model="newMascota.entrenamiento" value="si">Si</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.entrenamiento" value="si" required>Si</label>
 <label class="radio-inline"><input type="radio" ng-model="newMascota.entrenamiento" value="no">No</label>
 <label class="radio-inline"><input type="radio" ng-model="newMascota.entrenamiento" value="ns">No lo sé</label>
 </div>
 <div class="form-group"><!--Select de Espacio-->
 <label for="sel1">Espacio Requerido:</label>
-<label class="radio-inline"><input type="radio" ng-model="newMascota.espacio" value="mucho">Patio Amplio</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.espacio" value="mucho" required>Patio Amplio</label>
 <label class="radio-inline"><input type="radio" ng-model="newMascota.espacio" value="poco">Patio Reducido</label>
 <label class="radio-inline"><input type="radio" ng-model="newMascota.espacio" value="casa">Vive en casa</label>
 </div>
 <div class="form-group"><!--Severidad-->
 <label for="sel1">Severidad en que se encontró:</label>
-<label class="radio-inline"><input type="radio" ng-model="newMascota.severidad" value="critico">Crítico</label>
+<label class="radio-inline"><input type="radio" ng-model="newMascota.severidad" value="critico" required>Crítico</label>
 <label class="radio-inline"><input type="radio" ng-model="newMascota.severidad" value="mal">Mal Estado</label>
 <label class="radio-inline"><input type="radio" ng-model="newMascota.severidad" value="bien">Buen Estado</label>
 </div>
 <!--Enfermedades-->
-<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.enfermedades" placeholder="¿Sufre de alguna enfermedad?" type="text"></textarea>
+<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.enfermedad" placeholder="¿Sufre de alguna enfermedad?" type="text" required></textarea>
 <!--Tratamientos-->
-<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.tratamientos" placeholder="Si está enfermo. ¿Qué tratamiento sigue?" type="text"></textarea>
+<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.tratamiento" placeholder="Si está enfermo. ¿Qué tratamiento sigue?" type="text" required></textarea>
 <!--Medicamento-->
-<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.medicamentos" placeholder="Indique los medicamentos que consume" type="text"></textarea>
+<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.medicamento" placeholder="Indique los medicamentos que consume" type="text" required></textarea>
 <!--Veterinario-->
-<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.veterinario" placeholder="Indique el nombre del veterinario" type="text"></textarea>
-<!--Telefono-->
-<!-- <input class="form-control" name="telefono" style="margin:10px 0" placeholder="Teléfono del rescatista" type="text"/> -->
-<!--Correo-->
-<!-- <input class="form-control" name="correo" style="margin:10px 0" placeholder="Correo del rescatista" type="text"/> -->
+<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.veterinario" placeholder="Indique el nombre del veterinario" type="text" required></textarea>
+<!--Veterinario-->
+<textarea class="form-control" rows="2" style="margin:10px 0" ng-model="newMascota.lugar" placeholder="Indique el lugar donde encontró a la mascota" type="text" required></textarea>
 <div class="form-group">
 <label for="sel1">Adjunta una foto de la mascota recién rescatada:</label>
 <!--Selecciona Una Imagen-->
-<input class="form-control" ng-model="newMascota.fotoRecien" name="nombre" placeholder="Ingrese el URL" type="text"/>
+<input class="form-control" ng-model="newMascota.fotoAntes" name="nombre" placeholder="Ingrese el URL" type="text" required />
 <div class="form-group">
 <label for="sel1">Adjunta una foto actual de la mascota:</label>
 <!--Selecciona Una Imagen-->
-<input class="form-control" ng-model="newMascota.fotoActual" name="nombre" placeholder="Ingrese el URL" type="text"/>
-        <!-- <br /> -->
-        <button class="btn btn-lg btn-primary btn-block" ng-click="crear(newMascota)" type="submit" style="margin:20px 0" name="ejecutar">
-        Agregar Mascota</button>
-        <div class="form-group">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-text="¡Ayuda a una mascota a encontrar hogar con Pet Saviors!" data-via="PetSaviorsTEC" data-size="large" data-count="none" data-hashtags="RescataUnaMascota">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
-    </form>
+<input class="form-control" ng-model="newMascota.fotoDespues" name="nombre" placeholder="Ingrese el URL" type="text" required />
+<!-- <br /> -->
+<button class="btn btn-lg btn-primary btn-block" type="submit" style="margin:20px 0" name="ejecutar" ng-disabled="formRegistroMascota.$invalid" >
+Agregar Mascota</button>
+<div class="form-group">
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="¡Ayuda a una mascota a encontrar hogar con Pet Saviors!" data-via="PetSaviorsTEC" data-size="large" data-count="none" data-hashtags="RescataUnaMascota">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+</form>
 </section>
 </div>
 <div class="col-md-4"></div>
 <!-- </div> -->
 </div>
 </div>
-</form>
