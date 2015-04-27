@@ -7,7 +7,7 @@ app.factory('masterService', function($http,$cookies) {
             .success(function(msg) {
             scope.masterUsuario = null;    
 			scope.masterUsuario = msg[0];
-			console.log(msg);
+			// console.log(msg);
 			// swal("Información",  scope.masterUsuario.NOMBRE, "success");
             sessionStorage.user = JSON.stringify(scope.masterUsuario);
             

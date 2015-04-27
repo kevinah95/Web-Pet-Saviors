@@ -10,7 +10,7 @@ app.factory('editarperfilService', function($http, $location, masterService) {
                 } else {
                     
                     scope.user = { mail: scope.editadoUsuario.CORREOUSUARIO};
-                    var $promise = $http.post('data/getUsuarioEditado.php', scope.user) //send data to user.php
+                    var $promise = $http.post('data/getUsuarioInfo.php', scope.user) //send data to user.php
                         .success(function(msg) {
                             
                             scope.masterUsuario = msg[0];
@@ -28,9 +28,7 @@ app.factory('editarperfilService', function($http, $location, masterService) {
             });
         },
         datosIguales: function() {
-            // sessionService.destroy('user');
-            // sessionService.destroy('islogged');
-            // 
+            
             swal("No se realizaron modificaciones a su cuenta");
             $location.path('/home');
         },

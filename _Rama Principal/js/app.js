@@ -12,8 +12,6 @@ app.config(['$routeProvider', function($routeProvider) {
 
 app.run(function($rootScope , $location, loginService){
 
-	
-	
 	var routespermission=['/home'];
 	
 	$rootScope.$on('$routeChangeStart',function(){
