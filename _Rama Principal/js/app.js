@@ -12,21 +12,23 @@ app.config(['$routeProvider', function($routeProvider) {
 
 app.run(function($rootScope , $location, loginService){
 
-	var routespermission=['/home']; //route that require login
+	
+	
+	var routespermission=['/home'];
 	
 	$rootScope.$on('$routeChangeStart',function(){
-		if( routespermission.indexOf($location.path()) != -1 ){
-			var connected = loginService.islogged(); 
+		if( routespermission.indexOf($location.path()) !=-1)
+		{
+			var connected=loginService.islogged();
 			
-			if (!connected){
+			if (!connected){	
 				$location.path('/login');	
-				// console.log(connected);
 			}
 					
-				
+		}		
 			
 
-		}
+	
 	});
 
 });

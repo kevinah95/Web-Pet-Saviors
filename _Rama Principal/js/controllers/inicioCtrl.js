@@ -1,9 +1,10 @@
 'use strict';
 
-app.controller('inicioCtrl', function ($scope, inicioService) {
+app.controller('inicioCtrl', function ($scope, $location) {
 	$scope.ingresar = function(){
-		inicioService.ingresar();
-		 sessionStorage.setItem("islogged" , null);
+		sessionStorage.setItem("islogged" , null);
+		$location.path('/login');
+		 
 	};
 	
 });

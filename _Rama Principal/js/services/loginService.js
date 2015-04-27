@@ -26,8 +26,8 @@ app.factory('loginService',function($http, $location, sessionService, masterServ
 		islogged: function(){
 			var logeado = sessionStorage.getItem("islogged"); 
 
-			if (logeado) return true;
-			else return false;
+			return (logeado === null || logeado === "null") ? false : true;
+			
 		}
 
 		

@@ -8,7 +8,7 @@ app.factory('editarperfilService', function($http, $location, masterService) {
                 if (msg.data === 'Error') {
                     swal("Información Incorrecta", "Hubo un error en la actualización", "error");
                 } else {
-                    swal("Usuario Actualizado", "Datos Actualizados", "success");
+                    
                     scope.user = { mail: scope.editadoUsuario.CORREOUSUARIO};
                     var $promise = $http.post('data/getUsuarioEditado.php', scope.user) //send data to user.php
                         .success(function(msg) {
@@ -17,7 +17,7 @@ app.factory('editarperfilService', function($http, $location, masterService) {
                             console.log(msg);
                             // swal("Información",  scope.masterUsuario.NOMBRE, "success");
                             sessionStorage.user = JSON.stringify(scope.masterUsuario);
-
+                            swal("Usuario Actualizado", "Datos Actualizados", "success");
 
 
                         });
