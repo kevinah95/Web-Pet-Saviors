@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Notificaciones</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+	<!-- Open Sans font from Google CDN -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+
+	<!-- Pixel Admin's stylesheets -->
+	<link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+
+
+</head>
+<body ng-app= "myapp">
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Pet Saviors</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+	<br></br><br></br>
+	<div class="row">
+	<div class="panel panel-primary">
+	  <div class="panel-heading"><h2 class="panel-title">Notificaciones</h2></div>
+	  <div class="panel-body">
+		<div class="panel widget-messages-alt">
+			<div class="col-md-1"></div>
+	    		<div class="col-md-10">
+					<div class="panel-body padding-sm">
+						<div class="messages-list">
+							<div ng-controller = "PostsCtrl" >
+		       					<div class="col-md-12" ng-repeat = 'post in posts'>
+		       						<div class="row">
+									<div class="message">
+										<div class="col-md-8">
+										<img src="assets/demo/avatars/2.png" alt="" class="message-avatar">
+										<a href="#" class="message-subject">{{post.Mensaje}}</a>
+										<div class="message-description">
+											from <a href="#">{{post.Remitente}}</a>
+										</div> <!-- / .message-description --></div>
+										<div class="col-md-4">
+										<div class="btn-group">
+										  <a href="{{post.IdentificadorFormu}}"<button type="button" class="btn btn-primary">Ver Respuesta</button></a>
+										  <button type="button" class="btn btn-success">Aceptar</button>
+										  <button type="button" class="btn btn-danger">Rechazar</button>
+										</div>
+										</div>
+									</div> <!-- / .message --></div>
+								</div><!-- / .column -->
+							</div><!-- / .Controlador -->
+						</div> <!-- / .messages-list -->
+					</div> <!-- / .panel-body -->				
+				</div>
+			</div><!--idgent dentro del panel-->
+		</div><!--Cuerpo del panel-->
+		</div></div>
+<hr></hr>
+
+
+
+	<footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Pet Saviors 2015</p>
+                </div>
+            </div>
+        </footer>
+	</div><!--Container end-->
+
+<script>
+        angular.module("myapp", []).controller("PostsCtrl", function($scope, $http) {
+            $http.get('conectUserTable.php').success(function(data) { $scope.posts = data; })
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+<!-- Pixel Admin's javascripts -->
+<script src="assets/javascripts/bootstrap.min.js"></script>
+
+
+</body>
+</html>
