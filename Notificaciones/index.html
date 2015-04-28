@@ -92,7 +92,7 @@
 
 <script>
         angular.module("myapp", []).controller("PostsCtrl", function($scope, $http) {
-            $http.get('conectUserTable.php').success(function(data) { $scope.posts = data; })
+            $http.get('conectNotifyTable.php').success(function(data) { $scope.posts = data; })
         });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
