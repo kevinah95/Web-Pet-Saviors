@@ -8,6 +8,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/editarPerfil', {templateUrl: 'partials/editarPerfil.html',controller: 'editarperfilCtrl' , css: 'css/EditarUsuario.css'});
   $routeProvider.when('/registrarMascota', {templateUrl: 'partials/registrarMascota.html', controller: 'registrarmascotaCtrl' , css: 'css/RegistroMascota.css'});
   $routeProvider.when('/users', {templateUrl: 'partials/users.html', controller: 'usersCtrl', css: 'css/styleUsers.css'});
+  $routeProvider.when('/pet', {templateUrl: 'partials/pet.html', controller: 'petCtrl', css: 'css/stylePet.css'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 

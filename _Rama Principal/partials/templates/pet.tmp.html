@@ -43,25 +43,45 @@
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Introduction Row -->
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>¡Bienvenido a la página de Mascotas!</h1>
+            <p><a href = "petCatalogue.html" class="btn btn-primary btn-large">¡Explore todas las mascotas!</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Usuarios
-                    <small>Conoce a los usuarios que utilizan nuestra app</small>
-                </h1>
+                <h3>Últimos registros</h3>
             </div>
         </div>
-        
-        <!-- Team Members Row -->
+        <!-- /.row -->
+
         <div>
-            <div class="row">
-                <div class="col-lg-2 col-sm-2 text-center" ng-repeat = 'post in posts'>
-                    <img class="img-circle img-responsive img-center" ng-src={{post.Foto}} height="200" width="200" alt="">
-                    <h3>{{post.Nombre}} {{post.P_Apellido}}
-                        <!--<small>Rescatista</small>-->
-                    </h3>
-                    <p>Correo: {{post.Correo}}</p>
-                </div>        
+            Buscar: <input ng-model="search.Nombre">
+            <hr>
+
+            <div class="row text-center" >
+            
+            <!--Cada cuadro-->
+            <div class="col-md-3 col-md-2 hero-feature" ng-repeat = 'post in posts | filter:search:strict | limitTo: 5'>
+                <div class="thumbnail">
+                <img ng-src = {{post.FotoAntes}} alt = "">
+                    <div class="caption">
+                        <h3 href = "#">{{post.Nombre}}</h3>
+                        <p href = "#">{{post.Descripcion}}</p>                        
+                        <p>
+                            <a class="btn btn-primary">¡Adóptelo!</a>
+                            <a class="btn btn-default">Más información</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--Fin cada cuadro-->
+
             </div>
         </div>
 
@@ -71,9 +91,10 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Pet Saviors 2015</p>
+                    <p>Copyright © Pet Saviors 2015</p>
                 </div>
             </div>
         </footer>
 
     </div>
+    <!-- /.container -->

@@ -5,6 +5,6 @@ app.controller('usersCtrl', ['$scope','$http','usersService', '$location', funct
 		$location.path('/users');
 	};
 
-	$http.get('data/connectUserTable.php').success(function(data) { $scope.posts = data; });
+	$http.get('data/conectUserTable.php').success(function(data) { $scope.posts = data; });
 
 }]);
