@@ -10,5 +10,8 @@ app.controller('homeCtrl', ['$scope','loginService', '$location', function($scop
 	$scope.registrarMascota=function(){
 		$location.path('/registrarMascota');
 	};
+	$scope.users = function(){
+	 	$location.path('/users');
+	};
 
 }]);
