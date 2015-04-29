@@ -1,0 +1,170 @@
+<div class="container" ng-init="animacion()">
+    <!-- Agregar a la página principal. 
+    <div class="navbar">
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <img src="Images/LogoLargoEstandar.png" height="100" width="670">
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="MargenCentrado"><a href="#">Inicio</a></li>
+                    <li class="MargenCentrado"><a href="#">Contacto</a></li>
+                    <li class="dropdown MargenCentrado">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Explorar <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Adoptar Mascota</a></li>
+                    <li><a href="" ng-click="registrarMascota()">Dar en Adopción</a></li>
+                    <li><a href="#">Algo que haga la progra</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Pet Saviors - Proyect</li>
+                    <li><a href="#">Desarrolladores</a></li>
+                    <li><a href="#">Otra cosa que no sé</a></li>
+                    </ul>
+                    </li>
+                    <li class="dropdown MargenCentrado">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Adoptar Mascota</a></li>
+                    <li><a class='BotonPop' href='' ng-click='verperfil()'>Ver mi perfil</a></li>
+                    <li class='divider'></li>
+                    <li><a class='BotonPop' href='' ng-click='logout()'>Cerrar sesión</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+                </div>
+            </nav>
+        </div>
+    </div>   -->
+    <div class="row">
+<!--                 <div class="col-md-5  toppad  pull-right col-md-offset-3 Padding">
+        </div> -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 toppad centrar" id="firstPanel">
+            <div class="panel panel-info Sombra ColorHeading">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://www.bestfon.info/images/joomgallery/originals/animales_7/animal_118_20120518_1511321022.jpg" class="img-rounded NewSize"> </div>
+                    </div>
+                        
+                    <div class = "row">
+                        <div class=" col-md-12 col-lg-12" align="center">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr>
+                                        <td>Tipo: </td>
+                                        <td>//Tipo//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Raza: </td>
+                                        <td>//Raza//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nombre: </td>
+                                        <td>//Nombre//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tamaño: </td>
+                                        <td>//Tamaño//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Energía: </td>
+                                        <td>//Energía//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pelaje: </td>
+                                        <td>//Pelaje//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Color: </td>
+                                        <td>//Color//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entrenamiento: </td>
+                                        <td>//Entrenamiento//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Espacio Requerido: </td>
+                                        <td>//Espacio Requerido//</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <button class="btn btn-success" id="btnSalud">Mostrar Salud</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer Grande">
+                    <span class="pull-right">
+                        <a href="" ng-click="volver()"data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Volver</a>
+                    </span>
+                </div> 
+            </div>
+        </div>
+        <div class="col-lg-4 toppad Esconder" id="SecondPanel">
+            <div class="panel panel-info Sombra ColorHeading">
+                <div class="panel-body">
+                    <div class="row">
+                        <h3 align="center">Foto de cuando se encontró:</h3>
+                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://img.fondosypantallas.com/wp-content/uploads/2009/01/ph-11139.jpg" class="img-rounded NewSize"> </div>
+                    </div>
+                    <div class = "row">
+                        <div class=" col-md-12 col-lg-12" align="center">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr>
+                                        <td>Estado del animal: </td>
+                                        <td>//Estado del animal//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enfermedades: </td>
+                                        <td>//Enfermedades//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tratamientos: </td>
+                                        <td>//Tratamientos//</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Medicamentos: </td>
+                                        <td>//Medicamentos//</td>
+              
+                                    </tr>
+                                    <tr>
+                                        <td>Veterinario: </td>
+                                        <td>//Veterinario//</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<script type="text/javascript">
+    $("#SecondPanel").hide();
+
+    var changeFlag = true;
+    $("#btnSalud").click(function(){
+        if(changeFlag) {
+            $("#btnSalud").text("Ocultar Salud");
+            $("#firstPanel").animate({
+                marginLeft: '0px'
+            }, 'slow');
+            $("#SecondPanel").show('slow');
+            changeFlag = false;
+        }
+        else {
+            $("#btnSalud").text("Mostrar Salud");
+            $("#firstPanel").animate({
+                marginLeft: '18%'
+            }, 'slow');
+            $("#SecondPanel").hide('slow');
+            changeFlag = true;
+        }
+    })
+
+</script> -->
