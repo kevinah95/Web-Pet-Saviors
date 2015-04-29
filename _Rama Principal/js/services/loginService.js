@@ -21,7 +21,7 @@ app.factory('loginService',function($http, $location, sessionService, masterServ
 		logout:function(){
 			sessionService.destroy('user');
 			sessionService.destroy('islogged');
-			$location.path('/login');
+			$location.path('/inicio');
 		},
 		islogged: function(){
 			var logeado = sessionStorage.getItem("islogged"); 

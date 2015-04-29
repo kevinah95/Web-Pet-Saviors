@@ -1,0 +1,9 @@
+diff a/_Rama Principal/index.html b/_Rama Principal/index.html	(rejected hunks)
+@@ -29,6 +29,7 @@
+     <div ng-view></div>
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
++    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+ 
+     <script src="js/ParallaxEffect.js" type="text/javascript"></script>
+     
