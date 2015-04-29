@@ -1,14 +1,14 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+$user = json_decode(file_get_contents('php://input'));
 $conn = oci_connect('PetSaviors', 'PetSaviors', 'localhost/DBPrueba');
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
 
-$stid = oci_parse($conn, 'SELECT * FROM Notificaciones WHERE DESTINATARIO = {{masterUsuario.CORREOUSUARIO}}');
+$stid = oci_parse($conn, 'SELECT * FROM Notificaciones WHERE DESTINATARIO = :correo');
 oci_execute($stid);
+oci_bind_by_name($query,":correo",$user->CORREOUSUARIO);
 
 // WHILE que convierte los datos de la base a Json
 $outp = "[";

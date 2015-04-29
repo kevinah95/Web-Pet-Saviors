@@ -1,8 +1,8 @@
 'use strict'
 
-app.controller('inicioCtrl', function($scope,$location){
-	$scope.ingresar = function(){
-		sessionStorage.setItem("islogged",null);
-		$location.path('/notificaciones');
+app.controller('notificacionesCtrl', function($scope,$location){
+	$http.post('data/conectNotifyTable.php,',$scope.var.CORREOUSUARIO).success(function(data) { $scope.posts = data; })
 	};
+
+	$scope.getUsuario = function('$scope.var = JSON.parse(sessionStorage.user)')
 });
