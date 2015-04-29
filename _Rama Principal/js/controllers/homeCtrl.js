@@ -19,5 +19,8 @@ app.controller('homeCtrl', ['$scope','loginService', '$location', function($scop
 	$scope.testadopcion = function(){
 	 	$location.path('/testadoptar');
 	};
+	$scope.vernotificaciones = function(){
+	 	$location.path('/notificaciones');
+	};
 
 }]);
