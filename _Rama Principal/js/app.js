@@ -9,7 +9,11 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/registrarMascota', {templateUrl: 'partials/registrarMascota.html', controller: 'registrarmascotaCtrl' , css: 'css/RegistroMascota.css'});
   $routeProvider.when('/users', {templateUrl: 'partials/users.html', controller: 'usersCtrl', css: 'css/styleUsers.css'});
   $routeProvider.when('/pet', {templateUrl: 'partials/pet.html', controller: 'petCtrl', css: 'css/stylePet.css'});
+<<<<<<< HEAD
   $routeProvider.when('/testadoptar', {templateUrl: 'partials/testadoptar.html', controller: 'testadoptarCtrl', css: 'css/testadopcion.css'});
+=======
+  $routeProvider.when('/perfilMascotas', {templateUrl: 'partials/perfilMascotas.html', controller: 'perfilMascotasCtrl', css: 'css/petProfileStyle.css'});
+>>>>>>> c792f973465677b96769b9341e37ae941a43ebf5
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
