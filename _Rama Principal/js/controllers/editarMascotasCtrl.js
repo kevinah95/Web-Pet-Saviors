@@ -1,13 +1,9 @@
 'use strict';
 
-app.controller('perfilMascotasCtrl', ['$scope', '$location','$http', function($scope,$location,$http){
-	
+app.controller('editarMascotasCtrl', ['$scope', '$location', '$http',
+    function($scope, $location, $http) {
 
-	$scope.inicializar = function() {
-    $scope.infoMascota = JSON.parse(sessionStorage.tempIDMascota);
-    $scope.infoSalud = null;
-    $http.post('data/getSaludMascotas.php',$scope.infoMascota.IDSalud).success(function(msg) { $scope.infoSalud = msg[0]})
-    
+    $scope.animacion = function(){
     $("#SecondPanel").hide();
 
     var changeFlag = true;
@@ -29,13 +25,7 @@ app.controller('perfilMascotasCtrl', ['$scope', '$location','$http', function($s
             changeFlag = true;
         }
     })
-  	};
-  
-  $scope.editarPerfil = function(){
-  		$location.path('/editarMascotas');
-  	};
+  };
 
-  $scope.volver = function(){
-  		$location.path('/home');	
-  	};
-}]);
+    }
+]);

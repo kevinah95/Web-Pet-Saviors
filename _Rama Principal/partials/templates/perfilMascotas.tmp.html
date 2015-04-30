@@ -1,4 +1,4 @@
-<div class="container" ng-init="animacion()">
+<div class="container" ng-init="inicializar()">
     <!-- Agregar a la página principal. 
     <div class="navbar">
     <div class="container">
@@ -45,48 +45,51 @@
             <div class="panel panel-info Sombra ColorHeading">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://www.bestfon.info/images/joomgallery/originals/animales_7/animal_118_20120518_1511321022.jpg" class="img-rounded NewSize"> </div>
+                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" ng-src={{infoMascota.FotoDespues}} class="img-rounded NewSize"> </div>
                     </div>
-                        
                     <div class = "row">
                         <div class=" col-md-12 col-lg-12" align="center">
                             <table class="table table-user-information">
                                 <tbody>
                                     <tr>
                                         <td>Tipo: </td>
-                                        <td>//Tipo//</td>
+                                        <td>{{infoMascota.Tipo}}</td>
                                     </tr>
                                     <tr>
                                         <td>Raza: </td>
-                                        <td>//Raza//</td>
+                                        <td>{{infoMascota.Raza}}</td>
                                     </tr>
                                     <tr>
                                         <td>Nombre: </td>
-                                        <td>//Nombre//</td>
+                                        <td>{{infoMascota.Nombre}}</td>
                                     </tr>
                                     <tr>
                                         <td>Tamaño: </td>
-                                        <td>//Tamaño//</td>
+                                        <td>{{infoMascota.Tamano}}</td>
                                     </tr>
                                     <tr>
                                         <td>Energía: </td>
-                                        <td>//Energía//</td>
+                                        <td>{{infoMascota.Energia}}</td>
                                     </tr>
                                     <tr>
                                         <td>Pelaje: </td>
-                                        <td>//Pelaje//</td>
+                                        <td>{{infoMascota.Pelaje}}</td>
                                     </tr>
                                     <tr>
                                         <td>Color: </td>
-                                        <td>//Color//</td>
+                                        <td>{{infoMascota.Color}}</td>
                                     </tr>
                                     <tr>
                                         <td>Entrenamiento: </td>
-                                        <td>//Entrenamiento//</td>
+                                        <td>{{infoMascota.Entrenamiento}}</td>
                                     </tr>
                                     <tr>
                                         <td>Espacio Requerido: </td>
-                                        <td>//Espacio Requerido//</td>
+                                        <td>{{infoMascota.Espacio}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estado del animal: </td>
+                                        <td>{{infoMascota.Estado}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -97,7 +100,7 @@
                 </div>
                 <div class="panel-footer Grande">
                     <span class="pull-right">
-                        <a href="" ng-click="volver()"data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Volver</a>
+                        <a href="" ng-click="editarPerfil()"data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Volver</a>
                     </span>
                 </div> 
             </div>
@@ -107,32 +110,32 @@
                 <div class="panel-body">
                     <div class="row">
                         <h3 align="center">Foto de cuando se encontró:</h3>
-                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://img.fondosypantallas.com/wp-content/uploads/2009/01/ph-11139.jpg" class="img-rounded NewSize"> </div>
+                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" ng-src={{infoMascota.FotoAntes}} class="img-rounded NewSize"> </div>
                     </div>
                     <div class = "row">
                         <div class=" col-md-12 col-lg-12" align="center">
                             <table class="table table-user-information">
                                 <tbody>
                                     <tr>
-                                        <td>Estado del animal: </td>
-                                        <td>//Estado del animal//</td>
+                                        <td>Severidad: </td>
+                                        <td>{{infoSalud.SEVERIDAD}}</td>
                                     </tr>
                                     <tr>
                                         <td>Enfermedades: </td>
-                                        <td>//Enfermedades//</td>
+                                        <td>{{infoSalud.NOMBRE_ENFERMEDAD}}</td>
                                     </tr>
                                     <tr>
                                         <td>Tratamientos: </td>
-                                        <td>//Tratamientos//</td>
+                                        <td>{{infoSalud.NOMBRE_TRATAMIENTO}}</td>
                                     </tr>
                                     <tr>
                                         <td>Medicamentos: </td>
-                                        <td>//Medicamentos//</td>
+                                        <td>{{infoSalud.NOMBRE_MEDICAMENTOS}}</td>
               
                                     </tr>
                                     <tr>
                                         <td>Veterinario: </td>
-                                        <td>//Veterinario//</td>
+                                        <td>{{infoSalud.NOMBRE_VETERINARIO}}</td>
                                     </tr>
                                 </tbody>
                             </table>

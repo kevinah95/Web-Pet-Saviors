@@ -5,7 +5,8 @@ app.controller('petCtrl', ['$scope','$http','petService', '$location', function(
 		$location.path('/pet');
 	};
 
-	$scope.perfilMascota=function(){
+	$scope.guardarID = function(pID){
+		sessionStorage.tempIDMascota = JSON.stringify(pID);
 		$location.path('/perfilMascotas');
 	};
 
