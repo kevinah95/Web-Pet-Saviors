@@ -16,5 +16,11 @@ app.controller('homeCtrl', ['$scope','loginService', '$location', function($scop
 	$scope.pet = function(){
 	 	$location.path('/pet');
 	};
+	$scope.testadopcion = function(){
+	 	$location.path('/testadoptar');
+	};
+	$scope.vernotificaciones = function(){
+	 	$location.path('/notificaciones');
+	};
 
 }]);

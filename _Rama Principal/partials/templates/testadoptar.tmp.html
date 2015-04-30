@@ -1,0 +1,39 @@
+<div class="container" ng-init="inicializar()">
+	<div class="row" id="pwd-container">
+		<div class="col-md-3"></div>
+		
+		<div class="col-md-4">
+			<section class="login-form">
+				<form role="login">
+					<div ng-repeat="pregunta in preguntas | filter: preguntasArrayFiltro">
+						<p>{{pregunta.CONTENIDO_PREGUNTA}}</p>
+					</div>
+					
+					<div ng-repeat="respuesta in respuestas | filter: respuestasArrayFiltro">
+						<!-- <input class="form-control" type="t" ng-model="respuesta.CONTENIDO_ITEM"> -->
+						
+						<div class="form-control">
+							<label><input type="radio" name="{{respuesta.CONTENIDO_ITEM}}" required> {{respuesta.CONTENIDO_ITEM}}</label>
+						</div>
+					</div>
+					<div class="col-md-1">
+						<button class="btn btn-sm btn-danger" ng-click="atras()" ng-disabled="deshabilitarAtras">
+						Anterior</button>
+					</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1">
+						<button class="btn btn-sm btn-danger" ng-click="siguiente()" ng-disabled="deshabilitarSiguiente">
+						Siguiente</button>
+					</div>
+				</div>
+			</form>
+		</section>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
