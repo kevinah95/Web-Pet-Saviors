@@ -10,10 +10,10 @@
 					</div>
 					
 					<div ng-repeat="respuesta in respuestas | filter: respuestasArrayFiltro">
-						<!-- <input class="form-control" type="t" ng-model="respuesta.CONTENIDO_ITEM"> -->
+						<!-- <input class="form-control" type="t" ng-model="respuesta.RESPUESTA"> -->
 						
 						<div class="form-control">
-							<label><input type="radio" name="{{respuesta.CONTENIDO_ITEM}}" required> {{respuesta.CONTENIDO_ITEM}}</label>
+							<label><input type="radio" ng-model="$parent.seleccion" name="seleccion" value="{{respuesta.RESPUESTA}}" required> {{respuesta.RESPUESTA}}</label>
 						</div>
 					</div>
 					<div class="col-md-1">

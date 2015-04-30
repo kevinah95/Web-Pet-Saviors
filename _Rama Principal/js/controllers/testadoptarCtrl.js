@@ -7,6 +7,7 @@ app.controller('testadoptarCtrl', ['$scope', '$http',
             $scope.indice = 1;
             $scope.deshabilitarAtras = 1;
             $scope.seleccionadas = [];
+            $scope.seleccion = null;
             $http.get("data/getFAdopcionPreguntas.php")
                 .success(function(msg) {
                     $scope.preguntas = msg;
@@ -35,7 +36,8 @@ app.controller('testadoptarCtrl', ['$scope', '$http',
         		$scope.deshabilitarAtras = false;
         	}; 
         	$scope.deshabilitarSiguiente = ($scope.indice === $scope.preguntas.length) ? true : false;
-        	$scope.appendRespuestas();
+        	$scope.appendRespuestas($scope.seleccion);
+
         };
 
         $scope.preguntasArrayFiltro = function(item) {
@@ -45,12 +47,12 @@ app.controller('testadoptarCtrl', ['$scope', '$http',
 
         $scope.respuestasArrayFiltro = function(item) {
             // console.log(item);
-            return (item.ID_PREGUNTA == $scope.indice);
+            return (item.ID_PREGUNTAS == $scope.indice);
         };
 
-        $scope.appendRespuestas = function(){
-        	var objeto = {color:'azul'};
-        	$scope.seleccionadas.push(objeto);
+        $scope.appendRespuestas = function(valor){
+        	
+        	$scope.seleccionadas.push(valor);
         	console.log($scope.seleccionadas);
         }
 
