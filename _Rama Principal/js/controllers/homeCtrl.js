@@ -22,5 +22,8 @@ app.controller('homeCtrl', ['$scope','loginService', '$location', function($scop
 	$scope.vernotificaciones = function(){
 	 	$location.path('/notificaciones');
 	};
+	$scope.listanegra = function(){
+	 	$location.path('/listanegra');
+	};
 
 }]);

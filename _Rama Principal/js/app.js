@@ -12,7 +12,8 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/testadoptar', {templateUrl: 'partials/testadoptar.html', controller: 'testadoptarCtrl', css: 'css/testadopcion.css'});
   $routeProvider.when('/perfilMascotas', {templateUrl: 'partials/perfilMascotas.html', controller: 'perfilMascotasCtrl', css: 'css/petProfileStyle.css'});
   $routeProvider.when('/notificaciones', {templateUrl: 'partials/notificaciones.html', controller: 'notificacionesCtrl', css: ['css/widgets.min.css','css/notificaciones.css']});
-  
+  $routeProvider.when('/listanegra', {templateUrl: 'partials/listanegra.html', controller: 'listanegraCtrl'});
+
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
