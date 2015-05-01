@@ -22,7 +22,9 @@
                         <!--<small>Rescatista</small>-->
                     </h3>
                     <p>Correo: {{post.Correo}}</p>
-                    <button type="button" class="btn btn-danger">Quitar de la lista</button>
+                    <div ng-hide="imThisGuy(post)">
+                        <button type="button" ng-show='imAdmin()' ng-click="manageBlackList(post,0)" class="btn btn-success">Quitar de la lista</button>
+                    </div>
                 </div>        
             </div>
         </div>

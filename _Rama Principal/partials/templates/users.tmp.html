@@ -22,6 +22,21 @@
                         <!--<small>Rescatista</small>-->
                     </h3>
                     <p>Correo: {{post.Correo}}</p>
+
+                    <div ng-show = 'imAdmin()'>
+                        <div ng-hide='imThisGuy(post)'>
+                            <a class="btn btn-danger" 
+                            ng-hide= 'isInBL(post)' 
+                            ng-click ='manageBlackList(post,1)'> Insertar en lista negra </a>
+                            <a class="btn btn-success" 
+                            ng-hide= 'isAdmin(post)' 
+                            ng-click='manageAdmin(post,1)'> Agregar a admins </a>
+                            <a class="btn btn-warning   " 
+                            ng-show= 'isAdmin(post)' 
+                            ng-click='manageAdmin(post,0)'> Eliminar de admins </a>
+                        </div>
+                    </div>
+
                 </div>        
             </div>
         </div>
