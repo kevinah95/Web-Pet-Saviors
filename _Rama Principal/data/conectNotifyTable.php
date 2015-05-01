@@ -7,8 +7,10 @@ if (!$conn) {
 }
 
 $stid = oci_parse($conn, 'SELECT * FROM Notificaciones WHERE DESTINATARIO = :correo');
+
+oci_bind_by_name($stid,":correo",$user->CORREOUSUARIO);
 oci_execute($stid);
-oci_bind_by_name($query,":correo",$user->CORREOUSUARIO);
+
 
 // WHILE que convierte los datos de la base a Json
 $outp = "[";
