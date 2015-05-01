@@ -1,0 +1,42 @@
+<div class="navbar" ng-controller="navbarCtrl">
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <img src="Images/LogoLargoEstandar.png" height="100" width="670">
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+              <li class="MargenCentrado"><a href="#">Inicio</a></li>
+              <li class="MargenCentrado"><a href="#">Contacto</a></li>
+              <li class="dropdown MargenCentrado">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Explorar <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Adoptar Mascota</a></li>
+                  <li><a href="" ng-click="registrarMascota()">Dar en Adopción</a></li>
+                  <li><a href='' ng-click='users()'>Usuarios</a></li>
+                  <li><a href='' ng-click='pet()'>Mascotas</a></li>
+                  <li><a href='' ng-click='testadopcion()'>Test de Adopción</a></li>
+                  <li><a href='' ng-click='listanegra()'>Lista Negra</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Pet Saviors - Proyect</li>
+                  <li><a href="#">Desarrolladores</a></li>
+                  <li><a href="#">Otra cosa que no sé</a></li>
+                </ul>
+              </li>
+              <li class="dropdown MargenCentrado">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Adoptar Mascota</a></li>
+                  <li><a class='BotonPop' href='' ng-click='verperfil()'>Ver mi perfil</a></li>
+                  <li><a class='BotonPop' href='' ng-click='vernotificaciones()'>Ver Notificaciones</a></li>
+                  <li class='divider'></li>
+                  <li><a class='BotonPop' href='' ng-click='logout()'>Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
