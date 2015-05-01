@@ -2,8 +2,13 @@
 
 app.controller('inicioCtrl', function ($scope, $location) {
 	$scope.ingresar = function(){
-		sessionStorage.setItem("islogged" , null);
-		$location.path('/login');
+		$scope.validar = sessionStorage.getItem("islogged");
+		if ($scope.validar != null || $scope.validar != "null"){
+			$location.path('/home');
+		}else{
+			$location.path('/login');	
+		}
+		
 		 
 	};
 

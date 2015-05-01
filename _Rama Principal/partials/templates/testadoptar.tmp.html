@@ -4,36 +4,73 @@
 		
 		<div class="col-md-4">
 			<section class="login-form">
-				<form role="login">
-					<div ng-repeat="pregunta in preguntas | filter: preguntasArrayFiltro">
-						<p>{{pregunta.CONTENIDO_PREGUNTA}}</p>
-					</div>
-					
-					<div ng-repeat="respuesta in respuestas | filter: respuestasArrayFiltro">
-						<!-- <input class="form-control" type="t" ng-model="respuesta.RESPUESTA"> -->
-						
-						<div class="form-control">
-							<label><input type="radio" ng-model="$parent.seleccion" name="seleccion" value="{{respuesta.RESPUESTA}}" required> {{respuesta.RESPUESTA}}</label>
-						</div>
-					</div>
-					<div class="col-md-1">
-						<button class="btn btn-sm btn-danger" ng-click="atras()" ng-disabled="deshabilitarAtras">
-						Anterior</button>
-					</div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1">
-						<button class="btn btn-sm btn-danger" ng-click="siguiente()" ng-disabled="deshabilitarSiguiente">
-						Siguiente</button>
+				<form role="login" name="formTest" novalidate>
+					<div class="form-group"><!--Select de tipos-->
+					<label for="sel1">Tipo de Mascota:</label>
+					<div class="dropdown">
+						<button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" ng-disabled="deshabilitarTR" >
+						{{MascotaTipoRaza.tipo}}
+						<!-- <span class="caret"></span> -->
+						</button>
+						<ul class="dropdown-menu btn-block scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation" ng-repeat="tipo in tipos">
+								<a role="menuitem" tabindex="-1" ng-click="getRazaAnimal(tipo.NOMBRE_TIPO)">{{tipo.NOMBRE_TIPO}}</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</form>
-		</section>
-		<div class="col-md-4">
+				<!-- Razas  -->
+				<div class="form-group"><!--Razas-->
+				<label for="sel1">Raza de Mascota:</label>
+				
+				<div class="dropdown">
+					<button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" ng-disabled="deshabilitarTR">
+					{{MascotaTipoRaza.raza}}
+					<!-- <span class="caret"></span> -->
+					</button>
+					<ul class="dropdown-menu btn-block scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation" ng-repeat="raza in razas">
+							<a role="menuitem" tabindex="-1" ng-click="seleccionRaza(raza.NOMBRE_RAZA)">{{raza.NOMBRE_RAZA}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<label><input type="checkbox" ng-model="deshabilitarTR"> No deseo buscar por tipo y raza</label>
+			</div>
+			<!-- Preguntas -->
+			<div ng-repeat="pregunta in preguntas | filter: preguntasArrayFiltro">
+				<p>{{pregunta.CONTENIDO_PREGUNTA}}</p>
+			</div>
+			
+			<div ng-repeat="respuesta in respuestas | filter: respuestasArrayFiltro">
+				<!-- <input class="form-control" type="t" ng-model="respuesta.RESPUESTA"> -->
+				
+				<div class="form-control">
+					<label><input type="radio" ng-model="$parent.seleccion" name="seleccion" value="{{respuesta.RESPUESTA}}" required> {{respuesta.RESPUESTA}}</label>
+				</div>
+			</div>
+			<div class="form-control">
+				<label><input type="radio" ng-model="seleccion" name="seleccion" value="No importa" required>No importa</label>
+			</div>
+			<div class="col-md-1">
+				<button class="btn btn-sm btn-danger" ng-click="atras()" ng-disabled="deshabilitarAtras">
+				Anterior</button>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1">
+				<button class="btn btn-sm btn-danger" ng-disabled="formTest.$invalid" ng-click="siguiente()" ng-disabled="deshabilitarSiguiente">
+				Siguiente</button>
+			</div>
 		</div>
-	</div>
+	</form>
+</section>
+<div class="col-md-4">
+</div>
+</div>
 </div>
