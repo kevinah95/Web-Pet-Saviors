@@ -8,7 +8,13 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 		$location.path('/perfil');
 	};
 	$scope.registrarMascota=function(){
-		$location.path('/registrarMascota');
+		$scope.usuario = JSON.parse(sessionStorage.user);
+		if ($scope.usuario.ES_RESCATISTA === 1){
+			$location.path('/registrarMascota');	
+		}else{
+			swal('Privilegios Insuficientes','Usted debe de registrarse como rescatista para registrar a una mascota','error');
+		};
+		
 	};
 	$scope.users = function(){
 	 	$location.path('/users');

@@ -45,6 +45,7 @@ app.controller('registrarmascotaCtrl', ['$scope', '$location', '$http',
             var $promise = $http.post('data/crearMascota.php', mascota); //send data to user.php
             $promise.then(function(msg) {
                 console.log(msg);
+                $location.path('/home');
             });
         };
 
