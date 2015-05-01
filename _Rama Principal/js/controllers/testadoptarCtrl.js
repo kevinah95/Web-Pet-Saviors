@@ -1,19 +1,29 @@
 'use strict'
-app.controller('testadoptarCtrl', ['$scope', '$http',
-    function($scope, $http) {
+app.controller('testadoptarCtrl', ['$scope', '$http', '$location',
+    function($scope, $http, $location) {
         $scope.inicializar = function() {
             $scope.preguntas = null;
             $scope.respuestas = null;
             $scope.indice = 1;
             $scope.deshabilitarAtras = 1;
-            $scope.seleccionadas = [];
+            $scope.seleccionadas = {
+                Tamano: '',
+                Energia: '',
+                Pelaje: '',
+                Color: '',
+                Entrenamiento: '',
+                Espacio: '',
+                Severidad: '',
+                Tipo: '',
+                Raza: ''
+            };
             $scope.seleccion = "No importa";
             $scope.deshabilitarTR = false;
             $http.get("data/getFAdopcionPreguntas.php")
                 .success(function(msg) {
                     $scope.preguntas = msg;
-                    $scope.seleccionadas = new Array($scope.preguntas.length);
-                    console.log($scope.seleccionadas.length);
+                    // $scope.seleccionadas = new Array($scope.preguntas.length);
+                    // console.log($scope.seleccionadas.length);
                 });
             $http.get("data/getFAdopcionRespuestas.php")
                 .success(function(msg) {
@@ -28,7 +38,7 @@ app.controller('testadoptarCtrl', ['$scope', '$http',
                     $scope.tipos = msg;
                     $scope.MascotaTipoRaza = {
                         raza: 'raza',
-                        tipo: 'tipo',
+                        tipo: 'tipo'
                     };
                     $scope.getRazaAnimal($scope.tipos[0].NOMBRE_TIPO);
                     $scope.MascotaTipoRaza.tipo = $scope.tipos[0].NOMBRE_TIPO;
@@ -62,7 +72,32 @@ app.controller('testadoptarCtrl', ['$scope', '$http',
         };
 
         $scope.siguiente = function() {
-            $scope.seleccionadas[$scope.indice] = $scope.seleccion;
+            
+            switch($scope.indice){
+                case 1:
+                    $scope.seleccionadas.Tamano = $scope.seleccion;
+                    break;
+                case 2:
+                    $scope.seleccionadas.Energia = $scope.seleccion;
+                    break;
+                case 3:
+                    $scope.seleccionadas.Pelaje = $scope.seleccion;
+                    break;
+                case 4:
+                    $scope.seleccionadas.Color = $scope.seleccion;
+                    break;
+                case 5:
+                    $scope.seleccionadas.Entrenamiento = $scope.seleccion;
+                    break;
+                case 6:
+                    $scope.seleccionadas.Espacio = $scope.seleccion;
+                    break;
+                case 7:
+                    $scope.seleccionadas.Severidad = $scope.seleccion;
+                    break;
+                default:
+                    break;
+            }
             if ($scope.indice != $scope.preguntas.length) {
                 $scope.indice += 1;
                 $scope.deshabilitarAtras = false;
@@ -71,9 +106,14 @@ app.controller('testadoptarCtrl', ['$scope', '$http',
             
             if ($scope.indice === $scope.preguntas.length) {
                 if($scope.deshabilitarTR === false){
-                    $scope.seleccionadas.tipo = $scope.MascotaTipoRaza.tipo;
-                    $scope.seleccionadas.raza = $scope.MascotaTipoRaza.raza;
+                    $scope.seleccionadas.Tipo = $scope.MascotaTipoRaza.tipo;
+                    $scope.seleccionadas.Raza = $scope.MascotaTipoRaza.raza;
+                    
                 }
+                console.log($scope.seleccionadas);
+                console.log(JSON.stringify($scope.seleccionadas));
+                sessionStorage.resultadoTest = JSON.stringify($scope.seleccionadas);
+                $location.path('/resultadoTest');
             };
             $scope.seleccion = $scope.seleccionadas[$scope.indice];
             // $scope.deshabilitarSiguiente = ($scope.indice === $scope.preguntas.length) ? true : false;

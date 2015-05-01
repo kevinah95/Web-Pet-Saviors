@@ -13,7 +13,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/perfilMascotas', {templateUrl: 'partials/perfilMascotas.html', controller: 'perfilMascotasCtrl', css: 'css/petProfileStyle.css'});
   $routeProvider.when('/notificaciones', {templateUrl: 'partials/notificaciones.html', controller: 'notificacionesCtrl', css: ['css/widgets.min.css','css/notificaciones.css']});
   $routeProvider.when('/listanegra', {templateUrl: 'partials/listanegra.html', controller: 'listanegraCtrl'});
-
+  $routeProvider.when('/resultadoTest', {templateUrl: 'partials/resultadoTest.html', controller: 'resultadotestCtrl', css: 'css/stylePet.css'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 

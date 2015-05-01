@@ -1,0 +1,61 @@
+<div hola-ext-player="1">
+  <div navbar-directive></div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>¡Bienvenido a la página de Mascotas!</h1>
+            <p><a href = "petCatalogue.html" class="btn btn-primary btn-large">¡Explore todas las mascotas!</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Últimos registros</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div>
+            
+            <hr>
+
+            <div class="row text-center" >
+            
+            <!--Cada cuadro-->
+            <div class="col-md-3 col-md-2 hero-feature" ng-repeat = 'post in posts | filter:search:strict | limitTo: 5'>
+                <div class="thumbnail">
+                <img ng-src = {{post.FotoAntes}} alt = "">
+                    <div class="caption">
+                        <h3 href = "#">{{post.Nombre}}</h3>
+                        <p href = "#">{{post.Descripcion}}</p>                        
+                        <p>
+                            <a class="btn btn-primary">¡Adóptelo!</a>
+                            <a class="btn btn-default" ng-click='guardarID(post)'>Más información</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--Fin cada cuadro-->
+
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © Pet Saviors 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
