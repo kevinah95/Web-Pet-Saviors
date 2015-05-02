@@ -1,5 +1,5 @@
-app.directive('inicioDirective',function(){
+app.directive('adopcionesDirective',function(){
 	return{
 		templateUrl: 'partials/templates/adopciones.tmp.html'
-	}
-})
+	};
+});

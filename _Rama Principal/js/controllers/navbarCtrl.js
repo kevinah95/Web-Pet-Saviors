@@ -25,11 +25,14 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 	$scope.testrecomendar = function(){
 	 	$location.path('/testrecomendar');
 	};
+	$scope.listanegra = function(){
+	 	$location.path('/listanegra');
+	};
 	$scope.vernotificaciones = function(){
 	 	$location.path('/notificaciones');
 	};
-	$scope.listanegra = function(){
-	 	$location.path('/listanegra');
+	$scope.veradopciones = function(){
+	 	$location.path('/adopciones');
 	};
 
 }]);

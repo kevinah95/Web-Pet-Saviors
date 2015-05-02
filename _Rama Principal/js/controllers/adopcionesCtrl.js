@@ -7,12 +7,5 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		.success(function(data) { 
 		$scope.posts = data; })
 	};
-	$scope.adopciones = function(){
-		$location.path('/adopciones');
-	};
-	$scope.atras = function(){
-		$location.path('/home');
-	};
-
 	
 });

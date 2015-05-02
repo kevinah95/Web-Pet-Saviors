@@ -7,12 +7,4 @@ app.controller('notificacionesCtrl', function($scope,$location,$http){
 	.success(function(data) { 
 		$scope.posts = data; })
 	};
-
-	$scope.notificaciones = function(){
-		$location.path('/notificaciones');
-	};
-	$scope.notificaciones = function(){
-		$location.path('/home');
-	};
-	
 });
