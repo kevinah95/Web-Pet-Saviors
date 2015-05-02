@@ -28,7 +28,7 @@
             <div class="row text-center" >
             
             <!--Cada cuadro-->
-            <div class="col-md-3 col-md-2 hero-feature" ng-repeat = 'post in posts | filter:search:strict | limitTo: 5'>
+            <div class="col-md-3 col-md-2 hero-feature" ng-repeat = 'post in posts | filter:search '>
                 <div class="thumbnail">
                 <img ng-src = {{post.FotoAntes}} alt = "">
                     <div class="caption">
