@@ -22,8 +22,8 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 	$scope.pet = function(){
 	 	$location.path('/pet');
 	};
-	$scope.testadopcion = function(){
-	 	$location.path('/testadoptar');
+	$scope.testrecomendar = function(){
+	 	$location.path('/testrecomendar');
 	};
 	$scope.vernotificaciones = function(){
 	 	$location.path('/notificaciones');

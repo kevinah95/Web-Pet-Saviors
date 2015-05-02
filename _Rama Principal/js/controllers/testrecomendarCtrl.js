@@ -1,5 +1,5 @@
 'use strict'
-app.controller('testadoptarCtrl', ['$scope', '$http', '$location',
+app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
     function($scope, $http, $location) {
         $scope.inicializar = function() {
             $scope.preguntas = null;
@@ -33,7 +33,7 @@ app.controller('testadoptarCtrl', ['$scope', '$http', '$location',
             // ----------Tipo
             var $promise = $http.post('data/getTipoAnimal.php') //send data to user.php
                 .success(function(msg) {
-                    
+
 
                     $scope.tipos = msg;
                     $scope.MascotaTipoRaza = {
@@ -68,47 +68,49 @@ app.controller('testadoptarCtrl', ['$scope', '$http', '$location',
                 $scope.deshabilitarSiguiente = false;
             };
             $scope.deshabilitarAtras = ($scope.indice === 1) ? true : false;
-            $scope.seleccion = $scope.seleccionadas[$scope.indice];
+            $scope.seleccion = 'No importa';
         };
 
         $scope.siguiente = function() {
-            
-            switch($scope.indice){
-                case 1:
-                    $scope.seleccionadas.Tamano = $scope.seleccion;
-                    break;
-                case 2:
-                    $scope.seleccionadas.Energia = $scope.seleccion;
-                    break;
-                case 3:
-                    $scope.seleccionadas.Pelaje = $scope.seleccion;
-                    break;
-                case 4:
-                    $scope.seleccionadas.Color = $scope.seleccion;
-                    break;
-                case 5:
-                    $scope.seleccionadas.Entrenamiento = $scope.seleccion;
-                    break;
-                case 6:
-                    $scope.seleccionadas.Espacio = $scope.seleccion;
-                    break;
-                case 7:
-                    $scope.seleccionadas.Severidad = $scope.seleccion;
-                    break;
-                default:
-                    break;
+            if ($scope.seleccion != 'No importa') {
+
+                switch ($scope.indice) {
+                    case 1:
+                        $scope.seleccionadas.Tamano = $scope.seleccion;
+                        break;
+                    case 2:
+                        $scope.seleccionadas.Energia = $scope.seleccion;
+                        break;
+                    case 3:
+                        $scope.seleccionadas.Pelaje = $scope.seleccion;
+                        break;
+                    case 4:
+                        $scope.seleccionadas.Color = $scope.seleccion;
+                        break;
+                    case 5:
+                        $scope.seleccionadas.Entrenamiento = $scope.seleccion;
+                        break;
+                    case 6:
+                        $scope.seleccionadas.Espacio = $scope.seleccion;
+                        break;
+                    case 7:
+                        $scope.seleccionadas.Severidad = $scope.seleccion;
+                        break;
+                    default:
+                        break;
+                }
             }
             if ($scope.indice != $scope.preguntas.length) {
                 $scope.indice += 1;
                 $scope.deshabilitarAtras = false;
 
             };
-            
+
             if ($scope.indice === $scope.preguntas.length) {
-                if($scope.deshabilitarTR === false){
+                if ($scope.deshabilitarTR === false) {
                     $scope.seleccionadas.Tipo = $scope.MascotaTipoRaza.tipo;
                     $scope.seleccionadas.Raza = $scope.MascotaTipoRaza.raza;
-                    
+
                 }
                 console.log($scope.seleccionadas);
                 console.log(JSON.stringify($scope.seleccionadas));
@@ -132,7 +134,7 @@ app.controller('testadoptarCtrl', ['$scope', '$http', '$location',
             return (item.ID_PREGUNTAS == $scope.indice);
         };
 
-        
+
 
 
     }
