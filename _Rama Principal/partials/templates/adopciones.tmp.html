@@ -1,6 +1,6 @@
 <div navbar-directive></div>
 <br></br>
-<div class="container"  ng-init="inicializarTabla()">
+<div class="container" ng-init="inicializarTabla()">
 	<div class="panel panel-primary" style="text-align:center">
 	  <div class="panel-heading"><h1 class="panel-title">Adopciones</h1></div>
 	  <div class="panel-body">
@@ -13,21 +13,21 @@
 	  		<div class="col-md-2"><h4>Ver Más</h4></div>
 	  		<div class="col-md-1"></div>
 	  	</div>
-	  	<div class="row" style="border-bottom:1px solid #999" ng-repeat='post in posts'>
+	  	<div class="row" style="border-bottom:1px solid #999"  ng-repeat='post in posts'>
 	  		<div class="col-md-1"></div>
 	  		<div class="col-md-2"><h5>{{post.Rescatista}}</h5></div>
 	  		<div class="col-md-2"><h5>{{post.Adoptante}}</h5></div>
 	  		<div class="col-md-2"><h5>{{post.Mascota}}</h5></div>
 	  		<div class="col-md-2"><h5>{{post.Comentarios}}</h5></div>
-	  		<div class="col-md-2"><!--Meto el modal en el mismo div para que se cree uno por boton-->
-	  		<button type="button" class="btn btn-info btn-lg" data-togle="modal" ng-click="funcionParaModal(post)" data-target="#myModal">BTN</button>
-	  		<!--Abre una ventana con la imagenes de la adopcion"-->
+	  		<div class="col-md-2"><button type="button" class="btn btn-info btn-lg">+</button><!--data-target="#myModal"-->
+	  		</div>
 	  		<div class="col-md-1"></div>
 	  	</div>
 	  </div>
-	  <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</button>-->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</button>
 	  <div class="modal fade bs-example-modal-lg" id="myModal" role="dialog">
 			    <div class="modal-dialog modal-lg">
+			      <!-- Modal content-->
 			      <div class="modal-content">
 			        <div class="modal-header">
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -36,22 +36,22 @@
 			        <div class="modal-body">
 			          <div class="row">
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="{{selection.Foto}}" class="thumbnail img-responsive">
+					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
 					    </div>
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://www.cesarsway.com/sites/default/files/cesarsway-images/features/2012/JUNE/The-History-of-Beagles.jpg" class="thumbnail img-responsive">
+					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
 					    </div>
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://beagles-on-the-web.com/stansherm.jpg" class="thumbnail img-responsive">
+					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
 					    </div>
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://dogapedia.org/wp-content/uploads/2010/12/Beagle.jpg" class="thumbnail img-responsive">
+					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
 					    </div>
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://www.femmeactuelle.fr/var/femmeactuelle/storage/images/animaux/chiens-et-chats-de-race/chiens-de-race/le-beagle-00351/846691-3-fre-FR/le-beagle-doux-et-polyvalent.jpg" class="thumbnail img-responsive">
+					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
 					    </div>
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqiR3jb3NlXAdHuux5h4dIKZzhHff8N3VqcWCjnRYAZdeHaVU" class="thumbnail img-responsive">
+					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
 					    </div>
 					  </div>
 			        <div class="modal-footer">

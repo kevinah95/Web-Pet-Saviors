@@ -11,9 +11,10 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		.success(function(data) { 
 		$scope.posts = data; })
 	};
-	$scope.selection = null;
+	$scope.seleccion = null;
 	$scope.funcionParaModal = function(valor){
-		$scope.selection=valor;
+		$scope.seleccion=valor;
+		console.log($scope.seleccion);
 	};
 
 	$scope.fun = function(){
