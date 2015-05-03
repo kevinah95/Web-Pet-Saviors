@@ -10,12 +10,12 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/users', {templateUrl: 'partials/users.html', controller: 'usersCtrl', css: 'css/styleUsers.css'});
   $routeProvider.when('/pet', {templateUrl: 'partials/pet.html', controller: 'petCtrl', css: 'css/stylePet.css'});
   $routeProvider.when('/petCatalogue', {templateUrl: 'partials/petCatalogue.html', controller: 'petCatalogueCtrl', css: 'css/stylePet.css'});
-  $routeProvider.when('/testadoptar', {templateUrl: 'partials/testadoptar.html', controller: 'testadoptarCtrl', css: 'css/testadopcion.css'});
+  $routeProvider.when('/testrecomendar', {templateUrl: 'partials/testrecomendar.html', controller: 'testrecomendarCtrl', css: 'css/testadopcion.css'});
   $routeProvider.when('/perfilMascotas', {templateUrl: 'partials/perfilMascotas.html', controller: 'perfilMascotasCtrl', css: 'css/petProfileStyle.css'});
-  $routeProvider.when('/editarMascotas', {templateUrl: 'partials/editarMascotas.html', controller: 'editarMascotasCtrl', css: 'css/EditPetProfile.css'});
-  $routeProvider.when('/notificaciones', {templateUrl: 'partials/notificaciones.html', controller: 'notificacionesCtrl', css: ['css/widgets.min.css','css/notificaciones.css']});
+  $routeProvider.when('/notificaciones', {templateUrl: 'partials/notificaciones.html', controller: 'notificacionesCtrl', css: 'css/widgets.min.css'});
   $routeProvider.when('/listanegra', {templateUrl: 'partials/listanegra.html', controller: 'listanegraCtrl'});
-
+  $routeProvider.when('/adopciones', {templateUrl: 'partials/adopciones.html', controller: 'adopcionesCtrl'});
+  $routeProvider.when('/resultadoTest', {templateUrl: 'partials/resultadoTest.html', controller: 'resultadotestCtrl', css: 'css/stylePet.css'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
