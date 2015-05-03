@@ -18,6 +18,7 @@ while ($row = oci_fetch_array($stid, OCI_BOTH)) {
     if ($outp != "[") {$outp .= ",";}
     $outp .= '{"IdentificadorNotif":"'  . $row["ID_NOTIFICACION"] . '",';
     $outp .= '"IdentificadorFormu":"'   . $row["ID_FORMULARIO"]        . '",';
+    $outp .= '"Mascota":"'   . $row["ID_MASCOTA"]        . '",';
     $outp .= '"Remitente":"'   . $row["REMITENTE"] . '",';
     $outp .= '"Destinatario":"'   . $row["DESTINATARIO"] . '",';
     if (oci_field_is_null($stid,"MENSAJE")){

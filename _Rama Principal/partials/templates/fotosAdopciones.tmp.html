@@ -5,10 +5,16 @@
 	  	<div class="row">
 	  		<h3>Fotos de la Adopción</h3>
 	  	</div>
-	  	<div class="row">
+	  	<div class="row-same-height">
 	  		<div class="col-lg-4 col-sm-6 col-xs-12" ng-repeat='post in posts'>
                 <img src={{post.Foto}} class="thumbnail img-responsive">
     		</div>
+	  	</div>
+	  	<div class="row">
+	  		<div class="thumbnail"  
+                <img alt="User Pic" width = "150px" height = "150px" ng-src="{{editadoUsuario.FOTO}}">
+                <p class="text-center"><input id="inputName" type="text" placeholder="URL de la nueva imagen" ng-model="editadoUsuario.FOTO" required></p>
+            </div>
 	  	</div>
 	  	<div class="row">
         <a href="" ng-click="volver()"data-original-title="Remove this user" type="button" class="btn btn-sm btn-danger">Volver</a></div>
