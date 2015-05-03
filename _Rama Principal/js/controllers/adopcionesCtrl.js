@@ -6,28 +6,11 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		$http.post('data/conectAdopTable.php',$scope.varUser)
 		.success(function(data) { 
 		$scope.posts = data; })
-		$scope.varImg = $scope.posts.ID_MASCOTA;
-		$http.post('data/connectFotoTable.php',$scope.varImg)
-		.success(function(data) { 
-		$scope.posts = data; })
-	};
-	$scope.seleccion = null;
-	$scope.funcionParaModal = function(valor){
-		$scope.seleccion=valor;
-		console.log($scope.seleccion);
-	};
-
-	$scope.fun = function(){
-		return $scope.var1;
-	};
-	$scope.fun2 = function(){
-		if ($scope.var1===true){
-			$scope.var1=false;
-		}
-		else{
-			$scope.var1=true;
-		}
-		$scope.var1=false;
 	}
+	$scope.guardarID = function(pID){
+		sessionStorage.tempIDAdopcion = JSON.stringify(pID);
+		console.log(pID);
+		$location.path('/fotosAdopciones');
+	};
 	
 });
