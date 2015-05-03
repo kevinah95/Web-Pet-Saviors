@@ -1,18 +1,16 @@
 'use strict'
 
-app.controller('fotosAdopcionesCtrl',['$scope', '$location','$http', function($scope,$location,$http){
+app.controller('fotosAdopcionesCtrl', function($scope,$location,$http){
 	$scope.inicializar = function() {
-    $scope.infoAdopcion = JSON.parse(sessionStorage.tempIDAdopcion);
-    console.log($scope.infoAdopcion.IdAdopcion);
-    $scope.imagen = null;
-    $http.post('data/connectFotoTable.php',$scope.infoAdopcion.IdAdopcion)
+    $scope.infoAdopcion = sessionStorage.getItem('tempIDAdopcion');
+    console.log($scope.infoAdopcion);
+    $http.post('data/connectFotoTable.php',$scope.infoAdopcion)
     .success(function(msg){
-    $scope.imagen = msg[0]})
-    console.log($scope.imagen);
+    $scope.posts = msg[0];})
     
   	};
 
   $scope.volver = function(){
   		$location.path('/adopciones');	
   	};
-}]);
+});

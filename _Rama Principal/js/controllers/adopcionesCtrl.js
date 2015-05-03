@@ -8,8 +8,7 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		$scope.posts = data; })
 	}
 	$scope.guardarID = function(pID){
-		sessionStorage.tempIDAdopcion = JSON.stringify(pID);
-		console.log(pID);
+		sessionStorage.tempIDAdopcion = pID;
 		$location.path('/fotosAdopciones');
 	};
 	

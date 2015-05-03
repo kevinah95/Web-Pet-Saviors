@@ -1,5 +1,4 @@
 <div navbar-directive></div>
-<br></br>
 <div class="container" ng-init="inicializarTabla()">
 	<div class="panel panel-primary" style="text-align:center">
 	  <div class="panel-heading"><h1 class="panel-title">Adopciones</h1></div>
@@ -16,7 +15,7 @@
 	  		<div class="col-md-3"><h5>{{post.Adoptante}}</h5></div>
 	  		<div class="col-md-2"><h5>{{post.Mascota}}</h5></div>
 	  		<div class="col-md-3"><h5>{{post.Comentarios}}</h5></div>
-	  		<div class="col-md-1"><button class="btn btn-info btn-sm" ng-click="guardarID(post)">+</button>
+	  		<div class="col-md-1"><button class="btn btn-info btn-sm" ng-click="guardarID(post.IdAdopcion)">+</button>
 	  		</div>
 	  	</div>
 	  </div>
