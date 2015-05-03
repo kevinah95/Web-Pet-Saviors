@@ -7,7 +7,7 @@ if (!$conn) {
 }
 
 $curs = oci_new_cursor($conn);
-$stid = oci_parse($conn, "begin FORMULARIO_PAQ.get_Preguntas_Adopcion(:cursbv); end;");
+$stid = oci_parse($conn, "begin FORMULARIO_PAQ.get_Preguntas(:cursbv); end;");
 oci_bind_by_name($stid, ":cursbv", $curs, -1, OCI_B_CURSOR);
 oci_execute($stid);
 

@@ -35,4 +35,8 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 	 	$location.path('/adopciones');
 	};
 
+	$scope.testadopcion = function(){
+	 	$location.path('/testadopcion');
+	};	
+
 }]);

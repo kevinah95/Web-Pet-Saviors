@@ -19,13 +19,13 @@ app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
             };
             $scope.seleccion = "No importa";
             $scope.deshabilitarTR = false;
-            $http.get("data/getFAdopcionPreguntas.php")
+            $http.get("data/getFRecomendarPreguntas.php")
                 .success(function(msg) {
                     $scope.preguntas = msg;
                     // $scope.seleccionadas = new Array($scope.preguntas.length);
                     // console.log($scope.seleccionadas.length);
                 });
-            $http.get("data/getFAdopcionRespuestas.php")
+            $http.get("data/getFRecomendarRespuestas.php")
                 .success(function(msg) {
                     $scope.respuestas = msg;
 

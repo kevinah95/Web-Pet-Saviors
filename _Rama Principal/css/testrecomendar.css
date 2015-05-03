@@ -20,21 +20,14 @@
 		}
 
 	}
-.preguntas-titulo {
-	  position: relative;
-	  font-size: 16px;
-	  height: auto;
-	  margin-bottom: 10px;
-	  padding: 10px;
 
-	}
 
-.preguntas-form {
+.login-form {
 	margin-top: 100px;
 }
 
 
-form[role=preguntas] {
+form[role=login] {
 	color: #5d5d5d;
 	background: #f2f2f2;
 	
@@ -45,11 +38,11 @@ form[role=preguntas] {
 	-webkit-border-radius: 10px;
 }
 	
-	form[role=preguntas] input,
-	form[role=preguntas] button {
+	form[role=login] input,
+	form[role=login] button {
 		
 	}
-	form[role=preguntas] > div {
+	form[role=login] > div {
 		text-align: justify;
 	}
 	
