@@ -15,14 +15,13 @@ oci_execute($stid);
 $outp = "[";
 while ($row = oci_fetch_array($stid, OCI_BOTH)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Foto":"'  . $row["FOTO"] . '",';
+    $outp .= '{"Foto":"'  . $row["FOTO"] . '"}';
 }
 $outp .="]";
 
 //utf8_encode($String)--->Para convertir a UTF-8'
 
 echo(utf8_encode ($outp));
-
 oci_free_statement($stid);
 oci_close($conn);
 ?>
