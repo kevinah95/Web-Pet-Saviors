@@ -5,63 +5,22 @@
 	  <div class="panel-heading"><h1 class="panel-title">Adopciones</h1></div>
 	  <div class="panel-body">
 	  	<div class="row" style="border-bottom:4px solid #999">
-	  		<div class="col-md-1"></div>
-	  		<div class="col-md-2"><h4>Rescatista</h4></div>
-	  		<div class="col-md-2"><h4>Adoptante</h4></div>
+	  		<div class="col-md-3"><h4>Rescatista</h4></div>
+	  		<div class="col-md-3"><h4>Adoptante</h4></div>
 	  		<div class="col-md-2"><h4>Mascota</h4></div>
-	  		<div class="col-md-2"><h4>Comentarios</h4></div>
-	  		<div class="col-md-2"><h4>Ver Más</h4></div>
-	  		<div class="col-md-1"></div>
+	  		<div class="col-md-3"><h4>Comentarios</h4></div>
+	  		<div class="col-md-1"><h4>Ver Más</h4></div>
 	  	</div>
 	  	<div class="row" style="border-bottom:1px solid #999"  ng-repeat='post in posts'>
-	  		<div class="col-md-1"></div>
-	  		<div class="col-md-2"><h5>{{post.Rescatista}}</h5></div>
-	  		<div class="col-md-2"><h5>{{post.Adoptante}}</h5></div>
+	  		<div class="col-md-3"><h5>{{post.Rescatista}}</h5></div>
+	  		<div class="col-md-3"><h5>{{post.Adoptante}}</h5></div>
 	  		<div class="col-md-2"><h5>{{post.Mascota}}</h5></div>
-	  		<div class="col-md-2"><h5>{{post.Comentarios}}</h5></div>
-	  		<div class="col-md-2"><button type="button" class="btn btn-info btn-lg">+</button><!--data-target="#myModal"-->
+	  		<div class="col-md-3"><h5>{{post.Comentarios}}</h5></div>
+	  		<div class="col-md-1"><button class="btn btn-info btn-sm" ng-click="guardarID(post)">+</button>
 	  		</div>
-	  		<div class="col-md-1"></div>
 	  	</div>
 	  </div>
-	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</button>
-	  <div class="modal fade bs-example-modal-lg" id="myModal" role="dialog">
-			    <div class="modal-dialog modal-lg">
-			      <!-- Modal content-->
-			      <div class="modal-content">
-			        <div class="modal-header">
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h4 class="modal-title">Conoce la Adopción</h4>
-			        </div>
-			        <div class="modal-body">
-			          <div class="row">
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-					    </div>
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-					    </div>
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-					    </div>
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-					    </div>
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-					    </div>
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-					    </div>
-					  </div>
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        </div>
-			      </div>
-			      
-			    </div>
-			  </div>
-			</div>
+	  
 
 </div><!--Cuerpo del panel-->
 
