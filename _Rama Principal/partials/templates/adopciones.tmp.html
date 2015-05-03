@@ -20,40 +20,13 @@
 	  		<div class="col-md-2"><h5>{{post.Mascota}}</h5></div>
 	  		<div class="col-md-2"><h5>{{post.Comentarios}}</h5></div>
 	  		<div class="col-md-2"><!--Meto el modal en el mismo div para que se cree uno por boton-->
-	  		<button type="button" class="btn btn-info btn-lg" data-togle="modal" data-target="#myModal">+</button>
+	  		<button type="button" class="btn btn-info btn-lg" data-togle="modal" ng-click="funcionParaModal(post)" data-target="#myModal">BTN</button>
 	  		<!--Abre una ventana con la imagenes de la adopcion"-->
-	  		<div class="modal fade bs-example-modal-lg" id="myModal" role="dialog">
-			    <div class="modal-dialog modal-lg">
-			      <div class="modal-content">
-			        <div class="modal-header">
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h4 class="modal-title">Conoce la Adopción</h4>
-			        </div>
-			        <div class="modal-body">
-			          <div class="row">
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src={{post.Foto}} class="thumbnail img-responsive">
-					    </div>
-					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src="http://www.cesarsway.com/sites/default/files/cesarsway-images/features/2012/JUNE/The-History-of-Beagles.jpg" class="thumbnail img-responsive">
-					    </div>
-					  </div>
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        </div>
-			      </div>
-			      
-			    </div>
-			  </div>
-			</div>
-
-	  		</div>
 	  		<div class="col-md-1"></div>
 	  	</div>
 	  </div>
-	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</button>
-<br></br>
-	  <!--<div class="modal fade bs-example-modal-lg" id="myModal" role="dialog">
+	  <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+</button>-->
+	  <div class="modal fade bs-example-modal-lg" id="myModal" role="dialog">
 			    <div class="modal-dialog modal-lg">
 			      <div class="modal-content">
 			        <div class="modal-header">
@@ -63,7 +36,7 @@
 			        <div class="modal-body">
 			          <div class="row">
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
-					             <img src={{post.Foto}} class="thumbnail img-responsive">
+					             <img src="{{selection.Foto}}" class="thumbnail img-responsive">
 					    </div>
 					    <div class="col-lg-4 col-sm-6 col-xs-12">
 					             <img src="http://www.cesarsway.com/sites/default/files/cesarsway-images/features/2012/JUNE/The-History-of-Beagles.jpg" class="thumbnail img-responsive">
@@ -88,7 +61,7 @@
 			      
 			    </div>
 			  </div>
-			</div>-->
+			</div>
 
 </div><!--Cuerpo del panel-->
 
