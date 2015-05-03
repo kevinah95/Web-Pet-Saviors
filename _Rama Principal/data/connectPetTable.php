@@ -28,8 +28,8 @@ while ($row = oci_fetch_array($stid, OCI_BOTH)) {
     $outp .= '"FotoAntes":"'   . $row["FOTO_ANTES"]   . '",';
     $outp .= '"FotoDespues":"'   . $row["FOTO_DESPUES"]   . '",';
     $outp .= '"Estado":"'   . $row["ESTADO_MASCOTA"]   . '",';
-    $outp .= '"Lugar":"'   . $row["LUGAR_DE_ENCUENTRO"]   . '",';
     $outp .= '"Usuario":"'   . $row["USUARIO_ASOCIADO"]   . '",';
+    $outp .= '"Lugar":"'   . $row["LUGAR_DE_ENCUENTRO"]   . '",';
     $outp .= '"IDSalud":"'   . $row["ID_SALUD"]   . '"}';   
 }
 $outp .="]";

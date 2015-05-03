@@ -1,140 +1,127 @@
-        <div class="container" ng-init="animacion()">
-            <!-- Agregar a la página principal. 
-            <div class="navbar">
-            <div class="container">
-                <nav class="navbar navbar-inverse navbar-fixed-top">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <img src="Images/LogoLargoEstandar.png" height="100" width="670">
-                        </div>
-                        <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav pull-right">
-                            <li class="MargenCentrado"><a href="#">Inicio</a></li>
-                            <li class="MargenCentrado"><a href="#">Contacto</a></li>
-                            <li class="dropdown MargenCentrado">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Explorar <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Adoptar Mascota</a></li>
-                            <li><a href="" ng-click="registrarMascota()">Dar en Adopción</a></li>
-                            <li><a href="#">Algo que haga la progra</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Pet Saviors - Proyect</li>
-                            <li><a href="#">Desarrolladores</a></li>
-                            <li><a href="#">Otra cosa que no sé</a></li>
-                            </ul>
-                            </li>
-                            <li class="dropdown MargenCentrado">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Adoptar Mascota</a></li>
-                            <li><a class='BotonPop' href='' ng-click='verperfil()'>Ver mi perfil</a></li>
-                            <li class='divider'></li>
-                            <li><a class='BotonPop' href='' ng-click='logout()'>Cerrar sesión</a></li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>   -->
-            <div class="row">
-<!--                 <div class="col-md-5  toppad  pull-right col-md-offset-3 Padding">
-                </div> -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 toppad centrar" id="firstPanel">
-                    <div class="panel panel-info Sombra ColorHeading">
-                        <div class="panel-body">
-                            <div class="row text-center">
-                                <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="http://blog.flametreepublishing.com/Portals/293166/images/cthulhu-414web.jpg" class="img-rounded NewSize"> </div>
-                                <input class="text-center InputSize"id="inputName" type="text" placeholder="URL de la nueva imagen">
-                                <hr>
-                            </div>
-                                
-                            <div class = "row">
-                                <div class=" col-md-12 col-lg-12" align="center">
-                                    <table class="table table-user-information">
-                                        <tbody>
-                                            <tr class= "text-right">
-                                                <td>Nombre: </td>
-                                                <td><input class="text-center InputSize"id="inputName" type="text" placeholder="¿Cambiaron su nombre?"></tr>
-                                            </tr>
-                                            <tr class= "text-right">
-                                                <td>Tamaño: </td>
-                                                <td><input class="text-center InputSize"id="inputSize" type="text" placeholder="¿Ha cambiado de tamaño?"></tr>
-                                            </tr>
-                                            <tr class= "text-right">
-                                                <td>Energía: </td>
-                                                <td><input class="text-center InputSize"id="inputEnergy" type="text" placeholder="¿Ha cambiado su vitalidad?"></tr>
-                                            </tr>
-                                            <tr class= "text-right">
-                                                <td>Pelaje: </td>
-                                                <td><input class="text-center InputSize"id="inputFur" type="text" placeholder="¿Ha cambiado su pelaje?"></tr>
-                                            </tr>
-                                            <tr class= "text-right">
-                                                <td>Color: </td>
-                                                <td><input class="text-center InputSize" id="inputColor" type="text" placeholder="¿Su color ha cambiado?"></tr>
-                                            </tr>
-                                            <tr class= "text-right">
-                                                <td>Entrenamiento: </td>
-                                                <td><input class="text-center InputSize"id="inputTraining" type="text" placeholder="¿Nuevas costumbres?"></tr>
-                                            </tr>
-                                            <tr class= "text-right">
-                                                <td>Espacio Requerido: </td>
-                                                <td><input class="text-center InputSize"id="inputSpace" type="text" placeholder="¿Diferente espacio?"></tr>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    
+<div class="container" ng-init="Iniciar()">
 
-                                    <button class="btn btn-success" id="btnSalud">Editar Salud</button>
-                                    <hr>
-                                    <div class="panel-footer text-center Grande">
-                                        <a href="" data-original-title="Confirm changes" type="button" class="btn btn-sm btn-success">Confirmar Cambios</a>
-                                        <a href="" data-original-title="Discard changes" type="button" class="btn btn-sm btn-danger">Descartar Cambios</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 toppad centrar" id="firstPanel">
+            <div class="panel panel-info Sombra ColorHeading">
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="{{editadoMascota.FotoDespues}}" class="img-rounded NewSize"> </div>
+                        <input class="text-center InputSize"id="inputName" type="text" ng-model="editadoMascota.FotoDespues" placeholder="URL de la nueva imagen">
+                        <hr>
                     </div>
-                </div>
-                <div class="col-lg-4 toppad Esconder" id="SecondPanel">
-                    <div class="panel panel-info Sombra ColorHeading">
-                        <div class="panel-body">
-                            <div class="row">
-                                <h3 align="center">Foto de cuando se encontró:</h3>
-                                <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="https://img1.etsystatic.com/009/0/6715647/il_570xN.423292177_4g6n.jpg" class="img-rounded NewSize"> </div>
-                            </div>
-                            <div class = "row">
-                                <div class=" col-md-12 col-lg-12" align="center">
-                                    <table class="table table-user-information">
-                                        <tbody>
-                                            <tr>
-                                                <td>Estado del animal: </td>
-                                                <td><input class="text-center" id="inputName" type="text" placeholder="¿Diferente salud?"></tr>
-                                            </tr>
-                                            <tr>
-                                                <td>Enfermedades: </td>
-                                                <td><input class="text-center"id="inputName" type="text" placeholder="¿Sanó o enfermó?"></tr>
-                                            </tr>
-                                            <tr>
-                                                <td>Tratamientos: </td>
-                                                <td><input class="text-center"id="inputName" type="text" placeholder="¿Qué tratamiento?"></tr>
-                                            </tr>
-                                            <tr>
-                                                <td>Medicamentos: </td>
-                                                <td><input class="text-center" id="inputName" type="text" placeholder="¿Qué medicamentos?"></tr>
-                      
-                                            </tr>
-                                            <tr>
-                                                <td>Veterinario: </td>
-                                                <td><input class="text-center" id="inputName" type="text" placeholder="¿Nuevo veterinario?"></tr>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        
+                    <div class = "row">
+                        <div class=" col-md-12 col-lg-12" align="center">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr class= "text-right">
+                                        <td>Nombre: </td>
+                                        <td><input id="inputName" type="text" ng-model="editadoMascota.Nombre" required></tr>
+                                    </tr>
+                                    <tr class= "text-right">
+                                        <td>Tamaño: </td>
+                                        <td><div class="form-group"><!--Select de Tamanio-->
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Tamano" value="pequeño" required>Pequeño</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Tamano" value="mediano">Mediano</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Tamano" value="grande">Grande</label>
+                                        </div></tr>
+                                    </tr>
+                                    <tr class= "text-right">
+                                        <td>Energía: </td>
+                                        <td><div class="form-group"><!--Select de Energia-->
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Energia" value="perezoso" required>Perezoso</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Energia" value="moderado">Moderado</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Energia" value="activo">Activo</label>
+                                        </div></tr>
+                                    </tr>
+                                    <tr class= "text-right">
+                                        <td>Pelaje: </td>
+                                        <td><div class="form-group"><!--Select de Pelaje-->
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Pelaje" value="corto" required>Corto</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Pelaje" value="medio">Medio</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Pelaje" value="largo">Largo</label>
+                                        </div></tr>
+                                    </tr>
+                                    <tr class= "text-right">
+                                        <td>Color: </td>
+                                        <td><div class="form-group"><!--Select de Color-->
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Color" value="Negro" required>Negro</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Color" value="Blanco">Blanco</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Color" value="Café">Café</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Color" value="Gris">Gris</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Color" value="Dorado">Dorado</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Color" value="Otro">Otro</label>
+                                        </div></tr>
+                                    </tr>
+                                    <tr class= "text-right">
+                                        <td>Entrenamiento: </td>
+                                        <td><div class="form-group"><!--Select de Entrenamiento-->
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Entrenamiento" value="si" required>Si</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Entrenamiento" value="no">No</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Entrenamiento" value="ns">No lo sé</label>
+                                        </div></tr>
+                                    </tr>
+                                    <tr class= "text-right">
+                                        <td>Espacio Requerido: </td>
+                                        <td><div class="form-group"><!--Select de Espacio-->
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Espacio" value="mucho" required>Patio Amplio</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Espacio" value="poco">Patio Reducido</label>
+                                        <label class="radio-inline"><input type="radio" ng-model="editadoMascota.Espacio" value="casa">Vive en casa</label>
+                                        </div></tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+
+                            <button class="btn btn-success" id="btnSalud">Editar Salud</button>
+                            <hr>
+                            <div class="panel-footer text-center Grande">
+                                <a href="" ng-click="verificarDatos()" data-original-title="Confirm changes" type="button" class="btn btn-sm btn-success">Confirmar Cambios</a>
+                                <a href="" data-original-title="Discard changes" type="button" ng-click="NoCambios()" class="btn btn-sm btn-danger">Descartar Cambios</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-lg-4 toppad Esconder" id="SecondPanel">
+            <div class="panel panel-info Sombra ColorHeading">
+                <div class="panel-body">
+                    <div class="row">
+                        <h3 align="center">Foto de cuando se encontró:</h3>
+                        <div class="col-md-12 col-lg-12" align="center"> <img alt="User Pic" src="{{editadoMascota.FotoAntes}}" class="img-rounded NewSize"> </div>
+                    </div>
+                    <div class = "row">
+                        <div class=" col-md-12 col-lg-12" align="center">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr>
+                                        <td>Severidad: </td>
+                                        <td><input class="text-center" id="inputName" ng-model="editadoMascota.atrSeveridad" type="text" placeholder="¿Diferente salud?"></tr>
+                                    </tr>
+                                    <tr>
+                                        <td>Enfermedades: </td>
+                                        <td><input class="text-center"id="inputName" type="text" ng-model="editadoMascota.atrEnfermedad" placeholder="¿Sanó o enfermó?"></tr>
+                                    </tr>
+                                    <tr>
+                                        <td>Tratamientos: </td>
+                                        <td><input class="text-center"id="inputName" type="text" ng-model="editadoMascota.atrTratamiento" placeholder="¿Qué tratamiento?"></tr>
+                                    </tr>
+                                    <tr>
+                                        <td>Medicamentos: </td>
+                                        <td><input class="text-center" id="inputName" type="text" ng-model="editadoMascota.atrMedicamentos" placeholder="¿Qué medicamentos?"></tr>
+              
+                                    </tr>
+                                    <tr>
+                                        <td>Veterinario: </td>
+                                        <td><input class="text-center" id="inputName" type="text" ng-model="editadoMascota.atrVeterinario" placeholder="¿Nuevo veterinario?"></tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
