@@ -13,7 +13,7 @@
 	oci_bind_by_name($stid2, ':pTipo', $tipo);
 	oci_bind_by_name($stid2, ':pRemitente', $objeto[0]->SOLICITANTE);
 	oci_bind_by_name($stid2, ':pDestinatario', $objeto[0]->DUENIO);
-	$mensaje = 'mensaje';
+	$mensaje = 'Solicitud de Adopción';
 	oci_bind_by_name($stid2, ':pMensaje', $mensaje);
 	oci_bind_by_name($stid2, ':respuesta', $r, 256);
 	echo $r;
