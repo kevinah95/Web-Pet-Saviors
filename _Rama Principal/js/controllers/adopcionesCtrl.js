@@ -6,18 +6,11 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		$http.post('data/conectAdopTable.php',$scope.varUser)
 		.success(function(data) { 
 		$scope.posts = data; })
-		$scope.varImg = JSON.parse(sessionStorage.user);
+		$scope.varImg = $scope.posts.ID_MASCOTA;
 		$http.post('data/connectFotoTable.php',$scope.varImg)
 		.success(function(data) { 
 		$scope.posts = data; })
 	};
-	$scope.obtenerImagenes = function(){
-		$scope.varImg = JSON.parse(sessionStorage.user);
-		$http.post('data/connectFotoTable.php',$scope.varImg)
-		.success(function(data) { 
-		$scope.posts = data; })
-	};
-
 
 
 	$scope.fun = function(){
