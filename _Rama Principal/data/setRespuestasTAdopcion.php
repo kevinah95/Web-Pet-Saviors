@@ -6,13 +6,26 @@
 	$e = oci_error();
 	trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 	}
-		
-	
+
+	$stid2 = oci_parse($conn, "begin :respuesta := FORMULARIO_PAQ.AGREGAR_FORMULARIO2(
+		:pTipo, :pRemitente, :pDestinatario, :pMensaje); end;");	
+	$tipo = 'Formulario Test para Adoptar';
+	oci_bind_by_name($stid2, ':pTipo', $tipo);
+	oci_bind_by_name($stid2, ':pRemitente', $objeto[0]->SOLICITANTE);
+	oci_bind_by_name($stid2, ':pDestinatario', $objeto[0]->DUENIO);
+	$mensaje = 'mensaje';
+	oci_bind_by_name($stid2, ':pMensaje', $mensaje);
+	oci_bind_by_name($stid2, ':respuesta', $r, 256);
+	echo $r;
+	oci_execute($stid2);
+	oci_free_statement($stid2);
+
 	for ($i=0; $i < count($objeto); $i++) {
 		$stid = oci_parse($conn, "begin RESPUESTAS_USER_PKG.registrar_respuesta(
-		:id_p, :c_pregunta, :c_responde, :id_pet, :c_resp); end;");
+		:id_p, :id_form, :c_pregunta, :c_responde, :id_pet, :c_resp); end;");
 		$idPregunta = (int)$objeto[$i]->ID_PREGUNTAS;
 		oci_bind_by_name($stid, ':id_p', $idPregunta);
+		oci_bind_by_name($stid, ':id_form', $r);
 		oci_bind_by_name($stid, ':c_pregunta', $objeto[$i]->SOLICITANTE);
 		oci_bind_by_name($stid, ':c_responde', $objeto[$i]->DUENIO);
 		$idMascota = (int)$objeto[$i]->IDMASCOTA;
