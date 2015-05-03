@@ -11,11 +11,31 @@ app.controller('testadopcionCtrl', ['$scope', '$http', '$location',
 
         };
         $scope.enviar = function(){
+
+        	$scope.IDmascota = JSON.parse(sessionStorage.getItem('tempIDMascota')).ID;
+        	$scope.duenio = JSON.parse(sessionStorage.getItem('tempIDMascota')).Usuario;
+        	$scope.solicitante = JSON.parse(sessionStorage.getItem('user')).CORREOUSUARIO;
         	for (var i = 0; i < $scope.preguntas.length; i++) {
         		$scope.preguntas[i].RESPUESTA = $scope.respuestas[i];
+        		$scope.preguntas[i].DUENIO = $scope.duenio;
+        		$scope.preguntas[i].SOLICITANTE = $scope.solicitante;
+        		$scope.preguntas[i].IDMASCOTA = $scope.IDmascota;
         	};
+        	
+        	var $promise = $http.post('data/setRespuestasTAdopcion.php', $scope.preguntas); 
+            $promise.then(function(msg) {
+            	console.log(msg);
+                if(msg.data === 'Enviada'){
+                	console.log('dasdasd');
+                	swal('Información Correcta','La solicitud ha sido enviada','success');
+                	$location.path('/home');	
+                }
+                
+            });
 
-        	console.log($scope.preguntas);
+
+        	
+        	
         };
     }
 ]);

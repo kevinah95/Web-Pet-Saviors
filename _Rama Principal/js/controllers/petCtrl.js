@@ -9,6 +9,11 @@ app.controller('petCtrl', ['$scope','$http','petService', '$location', function(
 		$location.path('/petCatalogue');
 	};
 
+	$scope.testadopcion = function(pID){
+		sessionStorage.tempIDMascota = JSON.stringify(pID);
+		$location.path('/testadopcion');
+	};
+
 	$scope.guardarID = function(pID){
 		sessionStorage.tempIDMascota = JSON.stringify(pID);
 		$location.path('/perfilMascotas');
