@@ -12,6 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/petCatalogue', {templateUrl: 'partials/petCatalogue.html', controller: 'petCatalogueCtrl', css: 'css/stylePet.css'});
   $routeProvider.when('/testrecomendar', {templateUrl: 'partials/testrecomendar.html', controller: 'testrecomendarCtrl', css: 'css/testadopcion.css'});
   $routeProvider.when('/perfilMascotas', {templateUrl: 'partials/perfilMascotas.html', controller: 'perfilMascotasCtrl', css: 'css/petProfileStyle.css'});
+  $routeProvider.when('/editarMascotas', {templateUrl: 'partials/editarMascotas.html', controller: 'editarMascotasCtrl', css: 'css/EditPetProfile.css'});
   $routeProvider.when('/notificaciones', {templateUrl: 'partials/notificaciones.html', controller: 'notificacionesCtrl', css: 'css/widgets.min.css'});
   $routeProvider.when('/listanegra', {templateUrl: 'partials/listanegra.html', controller: 'listanegraCtrl'});
   $routeProvider.when('/adopciones', {templateUrl: 'partials/adopciones.html', controller: 'adopcionesCtrl'});
