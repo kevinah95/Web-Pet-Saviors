@@ -1,4 +1,4 @@
-'use strict'
+'use strict' 
 
 app.controller('adopcionesCtrl', function($scope,$location,$http){
 	$scope.inicializarTabla = function(){
