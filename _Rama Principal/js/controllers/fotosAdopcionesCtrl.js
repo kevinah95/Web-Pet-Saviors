@@ -20,13 +20,13 @@ app.controller('fotosAdopcionesCtrl', function($scope,$location,$http){
         $http.post('data/agregarFoto.php',$scope.mensaje)
         .success(function(data){
         $scope.posts = data;})
-        $location.path('/fotosAdopciones');
+        $location.path('/adopciones');
     }
 
     $scope.eliminar = function(idFoto){
         $http.post('data/eliminarFoto.php',idFoto)
         .success(function(data){
         $scope.posts = data;})
-        $location.path('/fotosAdopciones');
+        $location.path('/adopciones');
     };
 });
