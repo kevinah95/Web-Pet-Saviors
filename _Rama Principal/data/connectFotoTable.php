@@ -15,7 +15,8 @@ oci_execute($stid);
 $outp = "[";
 while ($row = oci_fetch_array($stid, OCI_BOTH)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Foto":"'  . $row["FOTO"] . '"}';
+    $outp .= '{"IdFoto":"'  . $row["ID_FOTO"] . '",';
+    $outp .= '"Foto":"'  . $row["FOTO"] . '"}';
 }
 $outp .="]";
 
