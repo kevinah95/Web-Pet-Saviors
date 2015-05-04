@@ -52,3 +52,10 @@ body {
 footer {
     margin: 50px 0;
 }
+
+input[type='radio'], label{   
+    vertical-align: baseline;
+    padding: 9px;
+    margin: 9px;
+    margin-top: -10px;
+ }

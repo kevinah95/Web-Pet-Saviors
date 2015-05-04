@@ -36,6 +36,6 @@ app.controller('perfilMascotasCtrl', ['$scope', '$location','$http', function($s
   	};
 
   $scope.volver = function(){
-  		$location.path('/home');	
+  		$location.path('/pet');	
   	};
 }]);

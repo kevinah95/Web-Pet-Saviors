@@ -12,11 +12,34 @@
                 </h1>
             </div>
         </div>
-        
+        <div class="row">
+            <div class="col-lg-12 column">
+                <h3>Filtrar resultados: </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 column">
+                <input class="form-control" type="text" placeholder="Nombre" ng-model="search.Nombre">
+            </div>
+            <div class="col-lg-2 column">
+                <input class="form-control" type="text" placeholder="Primer Apellido" ng-model="search.P_Apellido">
+            </div>
+            <div class="col-lg-2 column">
+                <input class="form-control" type="text" placeholder="Segundo Apellido" ng-model="search.S_Apellido">
+            </div>
+            <div class="col-lg-2 column">
+                <input class="form-control" type="text" placeholder="Correo" ng-model="search.Correo">
+            </div>
+            <div class="col-lg-2 column">
+                <input class="form-control" type="text" placeholder="Teléfono" ng-model="search.Telefono">
+            </div>
+        </div>
+        <hr>
         <!-- Team Members Row -->
         <div>
             <div class="row">
-                <div class="col-lg-2 col-sm-2 text-center" ng-repeat = 'post in posts'>
+                <div class="col-lg-2 col-sm-2 text-center" ng-repeat = 'post in posts | filter:search:strict'>
                     <img class="img-circle img-responsive img-center" ng-src={{post.Foto}} height="200" width="200" alt="">
                     <h3>{{post.Nombre}} {{post.P_Apellido}}
                         <!--<small>Rescatista</small>-->

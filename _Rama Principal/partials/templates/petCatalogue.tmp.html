@@ -6,10 +6,69 @@
         <button class="btn btn-warning" ng-click="makeFilter()">Mis mascotas</button>
     </div>
 </div>
+<h3>La cantidad de mascotas registradas es:</h3> <h2>{{posts.length}}</h2>
+<hr>
+<div class="row">
+    <div class="col-lg-2 column">
+        <input class="form-control" type="text" placeholder="Nombre" ng-model="search.Nombre">
+    </div>
+    <div class="col-lg-2 column">
+        <input class="form-control" type="text" placeholder="Tipo" ng-model="search.Tipo">
+    </div>
+    <div class="col-lg-2 column">
+        <input class="form-control" type="text" placeholder="Raza" ng-model="search.Raza">
+    </div>
+    <div class="col-lg-2 column">
+        <input class="form-control" type="text" placeholder="Color" ng-model="search.Color">
+    </div>
+    <div class="col-lg-2 column">
+        <input class="form-control" type="text" placeholder="Dueño" ng-model="search.Usuario">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2 column">
+        <h4>Tamaño:</h4>
+        <label><input type="radio" ng-model="search.Tamano" value="pequeño">Pequeño</label>
+        <label><input type="radio" ng-model="search.Tamano" value="mediano">Mediano</label>
+        <label><input type="radio" ng-model="search.Tamano" value="grande">Grande</label>
+        <label><input type="radio" ng-model="search.Tamano" value="">Sin filtro</label>
+    </div>
+    <div class="col-lg-2 column">
+        <h4>Entrenamiento:</h4>
+        <label><input type="radio" ng-model="search.Entrenamiento" value="sí">Si</label>
+        <label><input type="radio" ng-model="search.Entrenamiento" value="no">No</label>
+        <label><input type="radio" ng-model="search.Entrenamiento" value="ns">No lo sé</label>
+        <label><input type="radio" ng-model="search.Entrenamiento" value="">Sin filtro</label>
+    </div>
+    <div class="col-lg-2 column">
+        <h4>Energía:</h4>
+        <label><input type="radio" ng-model="search.Energia" value="perezoso">Perezoso</label>
+        <label><input type="radio" ng-model="search.Energia" value="moderado">Moderado</label>
+        <label><input type="radio" ng-model="search.Energia" value="activo">Activo</label>
+        <label class=""><input type="radio" ng-model="search.Energia" value="">Sin filtro</label>
+    </div>
+    <div class="col-lg-2 column">
+        <h4>Pelaje:</h4>
+        <label><input type="radio" ng-model="search.Pelaje" value="corto" required>Corto</label>
+        <label><input type="radio" ng-model="search.Pelaje" value="medio">Medio</label>
+        <label><input type="radio" ng-model="search.Pelaje" value="largo">Largo</label>
+        <label class=""><input type="radio" ng-model="search.Pelaje" value="">Sin filtro</label>
+    </div>
+    <div class="col-lg-2 column">
+        <h4>Espacio Requerido:</h4>
+        <label><input type="radio" ng-model="search.Espacio" value="mucho" required>Patio Amplio</label>
+        <label><input type="radio" ng-model="search.Espacio" value="poco">Patio Reducido</label>
+        <label><input type="radio" ng-model="search.Espacio" value="casa">Vive en casa</label>
+        <label class=""><input type="radio" ng-model="search.Espacio" value="">Sin filtro</label>
+    </div>
+</div>
+
+<hr>
+
 <div>
     <div class="row text-center" >        
     <!--Cada cuadro-->
-    <div ng-repeat = 'post in posts | filter: textToFilter'>
+    <div ng-repeat = 'post in posts | filter:textToFilter | filter:search:strict'>
         <div class="col-md-3 col-md-4 hero-feature">
             <div class="thumbnail">
                 <img ng-src = {{post.FotoAntes}} alt = "">
