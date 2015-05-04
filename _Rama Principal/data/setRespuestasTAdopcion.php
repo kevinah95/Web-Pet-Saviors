@@ -8,13 +8,15 @@
 	}
 
 	$stid2 = oci_parse($conn, "begin :respuesta := FORMULARIO_PAQ.AGREGAR_FORMULARIO2(
-		:pTipo, :pRemitente, :pDestinatario, :pMensaje); end;");	
+		:pTipo, :pRemitente, :pDestinatario, :pMensaje,:pMascota); end;");	
 	$tipo = 'Formulario Test para Adoptar';
 	oci_bind_by_name($stid2, ':pTipo', $tipo);
 	oci_bind_by_name($stid2, ':pRemitente', $objeto[0]->SOLICITANTE);
 	oci_bind_by_name($stid2, ':pDestinatario', $objeto[0]->DUENIO);
 	$mensaje = 'Solicitud de Adopción';
 	oci_bind_by_name($stid2, ':pMensaje', $mensaje);
+	$idMascota = (int)$objeto[0]->IDMASCOTA;
+	oci_bind_by_name($stid2, ':pMascota', $idMascota);
 	oci_bind_by_name($stid2, ':respuesta', $r, 256);
 	echo $r;
 	oci_execute($stid2);
