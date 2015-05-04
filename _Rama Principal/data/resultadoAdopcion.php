@@ -15,7 +15,7 @@ oci_execute($stid);
 oci_execute($curs);  // Execute the REF CURSOR like a normal statement id
 $json = array();
 while (($row = oci_fetch_array($curs, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-    $json[] = array_map("utf8_encode", $row);
+    $json[] = array_map(null, $row);
 }
 
 echo json_encode($json, JSON_UNESCAPED_UNICODE);

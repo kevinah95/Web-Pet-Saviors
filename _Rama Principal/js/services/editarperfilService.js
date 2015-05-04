@@ -21,7 +21,9 @@ app.factory('editarperfilService', function($http, $location, masterService) {
 
 
                         });
+                    
                     $location.path('/perfil');
+
                 };
                 console.log(msg.data + "   " + msg);
 
