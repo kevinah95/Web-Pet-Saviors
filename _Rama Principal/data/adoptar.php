@@ -26,6 +26,7 @@
 
 
     oci_execute($query);
+    print('Correcto');
 
     oci_free_statement($query);
 	oci_close($conn);
