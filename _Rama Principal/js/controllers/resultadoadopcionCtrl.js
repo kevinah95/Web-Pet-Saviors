@@ -6,36 +6,24 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
             $http.get("data/getFAdopcionPreguntas.php")
             .success(function(msg) {
                $scope.preguntas = msg;
-               $scope.respuestas = new Array($scope.preguntas.length);
             });
 
-        };
-        $scope.enviar = function(){
-
-        	$scope.IDmascota = JSON.parse(sessionStorage.getItem('tempIDMascota')).ID;
-        	$scope.duenio = JSON.parse(sessionStorage.getItem('tempIDMascota')).Usuario;
-        	$scope.solicitante = JSON.parse(sessionStorage.getItem('user')).CORREOUSUARIO;
-        	for (var i = 0; i < $scope.preguntas.length; i++) {
-        		$scope.preguntas[i].RESPUESTA = $scope.respuestas[i];
-        		$scope.preguntas[i].DUENIO = $scope.duenio;
-        		$scope.preguntas[i].SOLICITANTE = $scope.solicitante;
-        		$scope.preguntas[i].IDMASCOTA = $scope.IDmascota;
-        	};
-        	
-        	var $promise = $http.post('data/setRespuestasTAdopcion.php', $scope.preguntas); 
+            $scope.id_form = sessionStorage.getItem('tempIDForm');
+            var $promise = $http.post('data/resultadoAdopcion.php', $scope.id_form); //send data to user.php
             $promise.then(function(msg) {
-            	console.log(msg);
-                if(msg.data === 'Enviada'){
-                	console.log('dasdasd');
-                	swal('Información Correcta','La solicitud ha sido enviada','success');
-                	$location.path('/home');	
-                }
+                
+                for (var i = 0; i < msg.data.length; i++) {
+                    $scope.preguntas[i].respuesta = msg.data[i].CONT_REPUESTA;    
+                };
                 
             });
 
-
-        	
-        	
+        };
+        $scope.aceptar = function(){
+        	console.log('Aquí va aceptar solicitud');
+        };
+        $scope.atras = function(){
+            $location.path('/notificaciones');
         };
     }
 ]);

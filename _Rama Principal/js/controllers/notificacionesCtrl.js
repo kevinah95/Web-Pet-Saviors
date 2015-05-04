@@ -10,6 +10,6 @@ app.controller('notificacionesCtrl', function($scope,$location,$http){
 	$scope.guardarID = function(pID){
 		sessionStorage.tempIDForm = pID;
 		console.log(sessionStorage.getItem('tempIDForm'));
-		$location.path('/resultados');
+		$location.path('/resultadoadopcion');
 	};
 });
