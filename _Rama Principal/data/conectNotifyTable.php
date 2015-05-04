@@ -31,7 +31,7 @@ while ($row = oci_fetch_array($stid, OCI_BOTH)) {
 $outp .="]";
 
 //utf8_encode($String)--->Para convertir a UTF-8
-echo(utf8_encode ($outp));
+echo($outp);
 
 oci_free_statement($stid);
 oci_close($conn);

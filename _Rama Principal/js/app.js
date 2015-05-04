@@ -19,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/fotosAdopciones', {templateUrl: 'partials/fotosAdopciones.html', controller: 'fotosAdopcionesCtrl'});
   $routeProvider.when('/resultadoTest', {templateUrl: 'partials/resultadoTest.html', controller: 'resultadotestCtrl', css: 'css/stylePet.css'});
   $routeProvider.when('/testadopcion', {templateUrl: 'partials/testadopcion.html', controller: 'testadopcionCtrl', css: 'css/testadopcion.css'});
-
+  $routeProvider.when('/resultadoadopcion', {templateUrl: 'partials/resultadoadopcion.html', controller: 'resultadoadopcionCtrl', css: 'css/testadopcion.css'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
