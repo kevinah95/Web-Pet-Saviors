@@ -11,13 +11,14 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		sessionStorage.tempIDAdopcion = pID;
 		$location.path('/fotosAdopciones');
 	}
-	$scope.devolver = function(pIDMasc,pDevuelve,pRescata,pMotivo){
+	$scope.devolver = function(pIDMasc,pDevuelve,pRescata,pMotivo,pAdop){
 		$scope.mensaje = 
                      {
                          IDMASCOTA: pIDMasc,
                          DEVUELVE: pDevuelve,
                          RESCATA: pRescata,
-                         MOTIVO: pMotivo
+                         MOTIVO: pMotivo,
+                         ADOPCION: pAdop
                      };
         console.log($scope.mensaje);
 		$http.post('data/devolver.php',$scope.mensaje)

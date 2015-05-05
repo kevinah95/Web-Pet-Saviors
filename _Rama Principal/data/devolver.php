@@ -12,7 +12,8 @@
             :pDevuelve,
             :pRescata,
             :pIDMasc,
-            :pMotivo); end;";
+            :pMotivo,
+            :pAdopcion); end;";
 
     //Se crea la sentencia usando parse
     $query = oci_parse($conn , $sql);
@@ -22,9 +23,10 @@
     oci_bind_by_name($query ,":pDevuelve",$newDEV->DEVUELVE);
     oci_bind_by_name($query ,":pIDMasc",$newDEV->IDMASCOTA);
     oci_bind_by_name($query ,":pMotivo",$newDEV->MOTIVO);
+    oci_bind_by_name($query ,":pAdopcion",$newDEV->ADOPCION);
     print_r($newDEV->DEVUELVE);
 
 
-    oci_execute($query);
+    oci_execute($query); 
 
 ?>
