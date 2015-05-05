@@ -48,7 +48,7 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
                         var winHeight = window.innerHeight;
 
                         dialog.style.left = (winWidth/2) - 480/2 + "px";
-                        dialog.style.top = (winHeight/2) - 100 + "px";
+                        dialog.style.top = (winHeight/2) - 150 + "px";
                     });
                 } else {
                     swal('Error','hubo un problema en aceptar la solicitud','error');
