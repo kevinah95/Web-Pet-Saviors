@@ -1,0 +1,19 @@
+#fondoDev{
+		z-index: 9999;
+		height: 100%;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		position: fixed;
+		display: none;
+		background-color: #1B1B1B;
+		opacity: 0.8;
+}
+#motivoDev{
+		position: fixed;
+		width: 480px;
+		z-index: 9999;
+		border-radius: 10px;
+		border-color: #D5D6D8;
+		display: none;
+}

@@ -15,7 +15,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/editarMascotas', {templateUrl: 'partials/editarMascotas.html', controller: 'editarMascotasCtrl', css: 'css/EditPetProfile.css'});
   $routeProvider.when('/notificaciones', {templateUrl: 'partials/notificaciones.html', controller: 'notificacionesCtrl', css: 'css/widgets.min.css'});
   $routeProvider.when('/listanegra', {templateUrl: 'partials/listanegra.html', controller: 'listanegraCtrl'});
-  $routeProvider.when('/adopciones', {templateUrl: 'partials/adopciones.html', controller: 'adopcionesCtrl'});
+  $routeProvider.when('/adopciones', {templateUrl: 'partials/adopciones.html', controller: 'adopcionesCtrl', css: 'css/adopciones.css'});
   $routeProvider.when('/fotosAdopciones', {templateUrl: 'partials/fotosAdopciones.html', controller: 'fotosAdopcionesCtrl'});
   $routeProvider.when('/resultadoTest', {templateUrl: 'partials/resultadoTest.html', controller: 'resultadotestCtrl', css: 'css/stylePet.css'});
   $routeProvider.when('/testadopcion', {templateUrl: 'partials/testadopcion.html', controller: 'testadopcionCtrl', css: 'css/testadopcion.css'});

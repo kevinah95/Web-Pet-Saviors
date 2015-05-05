@@ -11,18 +11,44 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		sessionStorage.tempIDAdopcion = pID;
 		$location.path('/fotosAdopciones');
 	}
-	$scope.devolver = function(pIDMasc,pDevuelve,pRescata,pMotivo,pAdop){
+	$scope.abrirVentana = function(pMascota,pAdoptante,pRescatista,pAdopcion) {
+		sessionStorage.Mascota = pMascota;
+		sessionStorage.Adoptante = pAdoptante;
+		sessionStorage.Rescatista = pRescatista;
+		sessionStorage.Adopcion = pAdopcion;
+		var fondo = document.getElementById("fondoDev");
+        var dialog = document.getElementById("motivoDev");
+        fondo.style.display = "block";
+        dialog.style.display = "block";
+
+        var winWidth = window.innerWidth;
+        var winHeight = window.innerHeight;
+
+        dialog.style.left = (winWidth/2) - 480/2 + "px";
+        dialog.style.top = (winHeight/2) - 150 + "px";
+	}
+
+	$scope.devolver = function(){
 		$scope.mensaje = 
                      {
-                         IDMASCOTA: pIDMasc,
-                         DEVUELVE: pDevuelve,
-                         RESCATA: pRescata,
-                         MOTIVO: pMotivo,
-                         ADOPCION: pAdop
+                         IDMASCOTA: sessionStorage.getItem('Mascota'),
+                         DEVUELVE: sessionStorage.getItem('Adoptante'),
+                         RESCATA: sessionStorage.getItem('Rescatista'),
+                         ADOPCION: sessionStorage.getItem('Adopcion'),
+                         MOTIVO: $scope.men.motivo
                      };
         console.log($scope.mensaje);
 		$http.post('data/devolver.php',$scope.mensaje)
 		.success(function(msg){
         console.log(msg);})
+
+
+	}
+
+	$scope.cancelar = function(){
+		var fondo = document.getElementById("fondoDev");
+        var dialog = document.getElementById("motivoDev");
+        fondo.style.display = "none";
+        dialog.style.display = "none";
 	};
 });

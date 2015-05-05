@@ -7,7 +7,7 @@ if (!$conn) {
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
 
-$stid = oci_parse($conn, 'SELECT * FROM ADOPCIONES WHERE ESTADO ='COMPLETA'');
+$stid = oci_parse($conn, "SELECT * FROM ADOPCIONES WHERE ESTADO = 'COMPLETA'");
 oci_execute($stid);
 
 // WHILE que convierte los datos de la base a Json
