@@ -1,4 +1,4 @@
-<div navbar-directive></div>
+<div navbar-directive></div> 
 <div class="container" ng-init="inicializarTabla()">
 	<div class="panel panel-primary" style="text-align:center">
 	  <div class="panel-heading"><h1 class="panel-title">Adopciones</h1></div>
@@ -6,16 +6,17 @@
 	  	<div class="row" style="border-bottom:4px solid #999">
 	  		<div class="col-md-3"><h4>Rescatista</h4></div>
 	  		<div class="col-md-3"><h4>Adoptante</h4></div>
-	  		<div class="col-md-2"><h4>Mascota</h4></div>
+	  		<div class="col-md-1"><h4>Mascota</h4></div>
 	  		<div class="col-md-3"><h4>Comentarios</h4></div>
-	  		<div class="col-md-1"><h4>Ver Más</h4></div>
+	  		<div class="col-md-2"><h4>Más Acciones</h4></div>
 	  	</div>
 	  	<div class="row" style="border-bottom:1px solid #999"  ng-repeat='post in posts'>
 	  		<div class="col-md-3"><h5>{{post.Rescatista}}</h5></div>
 	  		<div class="col-md-3"><h5>{{post.Adoptante}}</h5></div>
-	  		<div class="col-md-2"><h5>{{post.Mascota}}</h5></div>
+	  		<div class="col-md-1"><h5>{{post.Mascota}}</h5></div>
 	  		<div class="col-md-3"><h5>{{post.Comentarios}}</h5></div>
-	  		<div class="col-md-1"><button class="btn btn-info btn-sm" ng-click="guardarID(post.IdAdopcion)">+</button>
+	  		<div class="col-md-2"><button class="btn btn-info btn-sm" ng-click="guardarID(post.IdAdopcion)">Fotos</button>
+	  		<button class="btn btn-danger btn-sm" ng-click="devolver(post.Mascota,post.Adoptante,post.Rescatista,'Muy Necio')">Devolver</button>
 	  		</div>
 	  	</div>
 	  </div>
