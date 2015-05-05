@@ -13,7 +13,7 @@ app.factory('facebookService', function($http, $location, $q) {
 
             }, {
                 // scope: 'email,user_likes,public_profile,publish_actions'
-                scope: 'publish_actions'
+                scope: 'public_profile,email'
             });
         } else {
             // The person is not logged into Facebook, so we're not sure if
@@ -26,11 +26,12 @@ app.factory('facebookService', function($http, $location, $q) {
     }
 
     function publicarImagen() {
+        
         // FB.api(
         //     "/me/photos",
         //     "POST", {
         //         "caption": 'Publicamos en Face señores!',
-        //         "url": "http://institutoperro.com/wp-content/uploads/2014/01/20140130011937.jpg"
+        //         "url": "http://www.yupiyupi.com/wp-content/uploads/2008/08/cacheton.jpg"
         //     },
         //     function(response) {
         //         if (response && !response.error) {
@@ -39,7 +40,7 @@ app.factory('facebookService', function($http, $location, $q) {
         //     }
         // );
         
-            FB.api('/me/feed', 'post', {
+        FB.api('/me/feed', 'post', {
                 message: 'Hello, world!'
             });
         
@@ -52,28 +53,8 @@ app.factory('facebookService', function($http, $location, $q) {
             });
         },
         postImagen: function() {
-            // var deferred = $q.defer();
-            // FB.api(
-            //     "/me/photos",
-            //     "POST", {
-            //         "caption": 'Publicamos en Face señores!',
-            //         "url": "http://institutoperro.com/wp-content/uploads/2014/01/20140130011937.jpg"
-            //     }, function(response) {
-            //         if (!response || response.error) {
-            //             deferred.reject('Error occured');
-            //             console.log('Error' + response);
-            //             return deferred.promise;
-            //         } else {
-            //             deferred.resolve(response);
-            //             console.log('promete');
-            //             return deferred.promise;
-            //         }
-            //     });
-
-            // publicarImagen();
-            // FB.api('/me/feed', 'post', {
-            //     message: 'Hello, world!'
-            // });
+            
+            publicarImagen();
 
         }
 
