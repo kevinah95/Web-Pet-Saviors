@@ -21,31 +21,42 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/testadopcion', {templateUrl: 'partials/testadopcion.html', controller: 'testadopcionCtrl', css: 'css/testadopcion.css'});
   $routeProvider.when('/resultadoadopcion', {templateUrl: 'partials/resultadoadopcion.html', controller: 'resultadoadopcionCtrl', css: 'css/testadopcion.css'});
   $routeProvider.when('/agregartr', {templateUrl: 'partials/agregartr.html', controller: 'agregartrCtrl', css: 'css/agregartr.css'});
+  $routeProvider.when('/facebook', {templateUrl: 'partials/facebook.html', controller: 'facebookCtrl'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
-app.run(function($rootScope , $location, loginService){
+app.run(function($rootScope, $location, loginService) {
+    var routespermission = ['/home'];
+    $rootScope.$on('$routeChangeStart', function() {
+        if (routespermission.indexOf($location.path()) != -1) {
+            var connected = loginService.islogged();
 
-	var routespermission=['/home'];
-	
-	$rootScope.$on('$routeChangeStart',function(){
-		if( routespermission.indexOf($location.path()) !=-1)
-		{
-			var connected=loginService.islogged();
-			
-			if (!connected){	
-				$location.path('/login');	
-			}
-					
-		}		
-			
+            if (!connected) {
+                $location.path('/login');
+            }
+        }
+    });
 
-	
-	});
-	
-
-
+    // INIT Facebook
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '902887406428355', //Cambiar el App Id para otras aplicaciones
+            cookie: true, // enable cookies to allow the server to access the session
+            xfbml: true, // parse social plugins on this page
+            version: 'v2.2' 
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    // FACEBOOK
 });
+
 
 // Para usar el route styles css https://github.com/tennisgent/angular-route-styles
 app.directive('head', ['$rootScope','$compile',
@@ -84,3 +95,4 @@ app.directive('head', ['$rootScope','$compile',
 				};
 			}
 		]);
+

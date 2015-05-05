@@ -41,5 +41,8 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 	$scope.agregartr = function(){
 	 	$location.path('/agregartr');
 	};	
+	$scope.facebook = function(){
+	 	$location.path('/facebook');
+	};	
 
 }]);
