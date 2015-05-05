@@ -49,6 +49,21 @@ body {
   margin-left: 1px;
 }
 
+.btn-xlarge {
+    padding: 28px 28px;
+    font-size: 22px;
+    line-height: normal;
+    background-color: #c89f6e;
+    border: #c89f6e;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+       -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+            box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  font-family: "Ubuntu", Georgia, Serif; 
+}
+
 footer {
     margin: 50px 0;
 }

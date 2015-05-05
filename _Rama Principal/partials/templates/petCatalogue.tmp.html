@@ -77,7 +77,7 @@
                     <p href = "#">Descripción: {{post.Descripcion}}</p>
                         
                     <p id="campo">
-                        <a class="btn btn-primary">¡Adóptelo!</a>
+                        <a class="btn btn-primary" ng-show="IamAdopter(post)" ng-click="goAdopcion(post)">¡Adóptelo!</a>
                         <a class="btn btn-default" ng-click="guardarID(post)">Más información</a>
                         <a class="btn btn-warning" ng-show="returnID(post)" ng-click="goEditar(post)">Editar</a>
                     </p>

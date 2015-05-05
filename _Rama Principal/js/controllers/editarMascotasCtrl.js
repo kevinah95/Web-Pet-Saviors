@@ -6,6 +6,7 @@ app.controller('editarMascotasCtrl', ['$scope', '$location', '$http', 'editarper
         $scope.Iniciar = function(){
             $scope.masterMascota =  JSON.parse(sessionStorage.tempIDMascota);
             $scope.editadoMascota =  JSON.parse(sessionStorage.tempIDMascota);
+            console.log($scope.editadoMascota);
             $scope.infoSalud = null;
             $http.post('data/getSaludMascotas.php',$scope.editadoMascota.IDSalud).success(function(msg) { $scope.infoSalud = msg[0]
                 // console.log($scope.infoSalud);

@@ -11,6 +11,11 @@ app.controller('petCatalogueCtrl', ['$scope','$http','petCatalogueService', '$lo
 		$location.path('/perfilMascotas');
 	};
 
+	$scope.goAdopcion = function(pID) {
+		sessionStorage.tempIDMascota = JSON.stringify(pID);
+		$location.path('/testadopcion');
+	}
+
 	$http.get('data/connectPetTable.php').success(function(data) { $scope.posts = data; });
 
 	$scope.returnID = function(pPost) {
@@ -27,5 +32,9 @@ app.controller('petCatalogueCtrl', ['$scope','$http','petCatalogueService', '$lo
 		$scope.textToFilter = $scope.User.CORREOUSUARIO;
 	}
 
+	$scope.IamAdopter = function(pPost) {
+		$scope.User = JSON.parse(sessionStorage.getItem("user"));
+		return (pPost.Usuario != $scope.User.CORREOUSUARIO && $scope.User.ES_ADOPTANTE === 1 && pPost.Estado != "ADOPTADO") ? true : false;
+	}
 
 }]);

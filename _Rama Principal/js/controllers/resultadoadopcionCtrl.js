@@ -35,13 +35,28 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
             $promise.then(function(msg) {
 
                 if (msg.data === 'Correcto') {
-                    swal('Solicitud Aceptada', 'Su mascota cuenta con un nuevo hogar', 'success');
-                    $location.path('/home');
+                    swal({title: 'Solicitud Aceptada', type: 'success'}, function(){
+                        var fondo = document.getElementById("colorBack");
+                        var dialog = document.getElementById("dialogBox");
+                        fondo.style.display = "block";
+                        dialog.style.display = "block";
+
+                        var winWidth = window.innerWidth;
+                        var winHeight = window.innerHeight;
+
+                        dialog.style.left = (winWidth/2) - 480/2 + "px";
+                        dialog.style.top = (winHeight/2) - 100 + "px";
+                    });
                 } else {
                     swal('Error','hubo un problema en aceptar la solicitud','error');
                 }
             });
         };
+
+        $scope.cancelarCalificacion = function() {
+            $location.path('/home');
+        }
+
         $scope.atras = function() {
             $location.path('/notificaciones');
         };
