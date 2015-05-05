@@ -20,6 +20,7 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/resultadoTest', {templateUrl: 'partials/resultadoTest.html', controller: 'resultadotestCtrl', css: 'css/stylePet.css'});
   $routeProvider.when('/testadopcion', {templateUrl: 'partials/testadopcion.html', controller: 'testadopcionCtrl', css: 'css/testadopcion.css'});
   $routeProvider.when('/resultadoadopcion', {templateUrl: 'partials/resultadoadopcion.html', controller: 'resultadoadopcionCtrl', css: 'css/testadopcion.css'});
+  $routeProvider.when('/agregartr', {templateUrl: 'partials/agregartr.html', controller: 'agregartrCtrl', css: 'css/agregartr.css'});
   $routeProvider.otherwise({redirectTo: '/inicio'});
 }]);
 
@@ -41,6 +42,8 @@ app.run(function($rootScope , $location, loginService){
 
 	
 	});
+	
+
 
 });
 

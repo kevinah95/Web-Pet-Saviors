@@ -1,0 +1,26 @@
+<div class="container" ng-init="inicializar()">
+	<div navbar-directive></div>
+	<div class="row" id="pwd-container">
+		<div class="col-md-4"></div>
+		
+		<div class="col-md-4">
+			
+			<form name="formAgregar" class="preguntas-form" role="preguntas">
+				<div>
+					<p class="text-center"><input class="form-control" name="inputTipo" type="text" placeholder="Tipo de Animal" ng-model="objTipos.tipo" required></p>
+				</div>
+				<hr>
+				<div ng-repeat="r in objTipos.razas">
+
+					<input type="text" class="form-control" name="inputRaza" placeholder="Raza de Animal" ng-model="r.raza" required><p class="text-right"><button class="btn btn-sm btn-aceptar" ng-click="removeRaza($index)">Remover</button></p>
+				</div>
+				<button class="btn btn-sm btn-primary" ng-disabled="formAgregar.$invalid" ng-click="addRaza()">Agregar</button>
+			</form>
+			<div>
+			<p class="text-center btn-aceptar" ><button class="btn btn-md btn-success" ng-disabled="formAgregar.$invalid" ng-click="aceptar()">Aceptar</button></p>
+			</div>
+			
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</div>

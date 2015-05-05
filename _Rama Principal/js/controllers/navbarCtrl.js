@@ -38,5 +38,8 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 	$scope.testadopcion = function(){
 	 	$location.path('/testadopcion');
 	};	
+	$scope.agregartr = function(){
+	 	$location.path('/agregartr');
+	};	
 
 }]);
