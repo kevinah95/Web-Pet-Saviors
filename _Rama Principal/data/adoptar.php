@@ -18,8 +18,8 @@
 
     //Se crea la sentencia usando parse
     $query = oci_parse($conn , $sql);
-	//Se crean las variables tomadas de los inputs
-
+	
+    //Se crean las variables tomadas de los inputs
     oci_bind_by_name($query ,":pOldUser",$newAdop->CORREOUSUARIO_OLD);
     oci_bind_by_name($query ,":pNewUser",$newAdop->CORREOUSUARIO_NEW);
     oci_bind_by_name($query ,":pIdMasc",$newAdop->ID_MASCOTA);

@@ -1,5 +1,5 @@
 <?php           
-        
+    //Carga los datos de login
     $Objeto=json_decode(file_get_contents('php://input'));
 
     $conn = oci_connect('PetSaviors', 'PetSaviors', 'localhost/DBPrueba', 'AL32UTF8');
@@ -7,9 +7,6 @@
         $e = oci_error();
         trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
     };
-
-    
-    
 
     $sql= "begin TIPOS_RAZAS_PAQ.Insertar_Tipo(:pTipo); end;";
 
@@ -21,7 +18,6 @@
     oci_free_statement($query);
 
     for ($i=0; $i < count($Objeto->razas); $i++) {
-        // print_r($Objeto->razas[$i]->raza);
         $sql= "begin 
         :ret := TIPOS_RAZAS_PAQ.Insertar_Raza(:pRaza,:pTipo); end;";
         $query = oci_parse($conn , $sql);

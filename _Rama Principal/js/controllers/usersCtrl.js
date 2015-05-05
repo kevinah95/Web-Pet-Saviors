@@ -7,7 +7,6 @@ app.controller('usersCtrl', ['$scope','$http', '$location', function($scope,$htt
 		$location.path('/users');
 	};
 
-
 	//Verifica si el usuario conectado tiene privilegios de administrador.
 	$scope.imAdmin=function(){
 		if (JSON.parse(sessionStorage.getItem('user')) != null) { 

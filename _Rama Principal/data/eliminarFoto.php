@@ -1,5 +1,5 @@
 <?php           
-        
+    //Carga el usuario de login        
     $photo = file_get_contents('php://input');
     $conn = oci_connect('PetSaviors', 'PetSaviors', 'localhost/DBPrueba', 'AL32UTF8');
     if (!$conn) {
