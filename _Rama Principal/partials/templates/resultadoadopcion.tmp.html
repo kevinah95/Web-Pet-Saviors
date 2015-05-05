@@ -57,10 +57,16 @@
 						{{newPuntaje}}
 					</div>
 				</div>
+				<div class="row center-block">
+					<div class="col-lg-12 column text-center">
+						<p>Motivo de la calificación</p>
+						<textarea ng-model="newMotivo" cols="30" rows="5"></textarea>
+					</div>
+				</div>
 				<br>
 				<div class="row center-block">
 					<div class="col-lg-6 column text-center">
-						<button class="btn btn-success">Subir calificación</button>
+						<button class="btn btn-success" ng-click="subirCalificacion(newPuntaje, newMotivo)">Subir calificación</button>
 					</div>
 					<div class="col-lg-6 column text-center">
 						<button class="btn btn-danger" ng-click="cancelarCalificacion()">No calificar</button>

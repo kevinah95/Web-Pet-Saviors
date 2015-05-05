@@ -24,9 +24,9 @@ app.controller('testadopcionCtrl', ['$scope', '$http', '$location',
         	
         	var $promise = $http.post('data/setRespuestasTAdopcion.php', $scope.preguntas); 
             $promise.then(function(msg) {
-            	console.log(msg);
+            	//console.log(msg);
                 if(msg.data === 'Enviada'){
-                	console.log('dasdasd');
+                	//console.log('dasdasd');
                 	swal('Información Correcta','La solicitud ha sido enviada','success');
                 	$location.path('/home');	
                 }
