@@ -1,11 +1,11 @@
 'use strict';
 app.factory('editarperfilmascotasService', function($http, $location) {
     return {
+        //Llama al php que se encarga de editar en la base. 
         datosModificados: function(scope) {
 
-            var $promise = $http.post('data/actualizarMascota.php', scope.editadoMascota); //send data to user.php
+            var $promise = $http.post('data/actualizarMascota.php', scope.editadoMascota); 
             $promise.then(function(msg) {
-                //console.log(msg.data);
                 if (msg.data === 'Correcto') {
                     swal("Mascota Actualizada", "Datos Actualizados", "success");
                     $location.path('/pet');
@@ -14,6 +14,8 @@ app.factory('editarperfilmascotasService', function($http, $location) {
                 };
             });
         },
+
+        //Devuelve un mensaje de error cuando se detectaron datos iguales. 
         datosIguales: function() {
             swal("No se realizaron modificaciones a su cuenta");
             $location.path('/pet');
