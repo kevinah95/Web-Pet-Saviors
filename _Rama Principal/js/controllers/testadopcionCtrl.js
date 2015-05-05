@@ -1,6 +1,8 @@
 'use strict'
 app.controller('testadopcionCtrl', ['$scope', '$http', '$location',
     function($scope, $http, $location) {
+
+        //Carga de la base las preguntas de la base 
         $scope.inicializar = function() {
 
             $http.get("data/getFAdopcionPreguntas.php")
@@ -10,6 +12,8 @@ app.controller('testadopcionCtrl', ['$scope', '$http', '$location',
             });
 
         };
+
+        //Setea los literales de cada pregunta para decir quien respondió las preguntas de qué persona y relacionadas a cuál mascota.
         $scope.enviar = function(){
 
         	$scope.IDmascota = JSON.parse(sessionStorage.getItem('tempIDMascota')).ID;
@@ -24,17 +28,12 @@ app.controller('testadopcionCtrl', ['$scope', '$http', '$location',
         	
         	var $promise = $http.post('data/setRespuestasTAdopcion.php', $scope.preguntas); 
             $promise.then(function(msg) {
-            	//console.log(msg);
-                if(msg.data === 'Enviada'){
-                	//console.log('dasdasd');
+            	if(msg.data === 'Enviada'){
                 	swal('Información Correcta','La solicitud ha sido enviada','success');
                 	$location.path('/home');	
                 }
                 
             });
-
-
-        	
         	
         };
     }

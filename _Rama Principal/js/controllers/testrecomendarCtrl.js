@@ -1,6 +1,8 @@
 'use strict'
 app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
     function($scope, $http, $location) {
+
+        //Carga todos los literales con strings vacíos y 
         $scope.inicializar = function() {
             $scope.preguntas = null;
             $scope.respuestas = null;
@@ -22,16 +24,16 @@ app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
             $http.get("data/getFRecomendarPreguntas.php")
                 .success(function(msg) {
                     $scope.preguntas = msg;
-                    // $scope.seleccionadas = new Array($scope.preguntas.length);
-                    // console.log($scope.seleccionadas.length);
+                    
                 });
             $http.get("data/getFRecomendarRespuestas.php")
                 .success(function(msg) {
                     $scope.respuestas = msg;
 
                 });
-            // ----------Tipo
-            var $promise = $http.post('data/getTipoAnimal.php') //send data to user.php
+
+            // En esta parte se manejan los tipos. 
+            var $promise = $http.post('data/getTipoAnimal.php') 
                 .success(function(msg) {
 
 
@@ -47,21 +49,23 @@ app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
 
         };
 
-        // Razas
+        // Se manejan las razas
         $scope.getRazaAnimal = function(tipoAnimal) {
             $scope.MascotaTipoRaza.tipo = tipoAnimal;
-            var $promise = $http.post('data/getRazaAnimal.php', tipoAnimal); //send data to user.php
+            var $promise = $http.post('data/getRazaAnimal.php', tipoAnimal);
             $promise.then(function(msg) {
                 $scope.razas = msg.data;
                 $scope.MascotaTipoRaza.raza = $scope.razas[0].NOMBRE_RAZA;
             });
         };
 
+        // Se carga la variable de mascota. 
         $scope.seleccionRaza = function(razaAnimal) {
             $scope.MascotaTipoRaza.raza = razaAnimal;
         };
 
 
+        //Regresa a la pregunta anterior mientras exista. 
         $scope.atras = function() {
             if ($scope.indice != 0) {
                 $scope.indice -= 1;
@@ -71,6 +75,7 @@ app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
             $scope.seleccion = 'No importa';
         };
 
+        //Avanza a la siguiente pregunta 
         $scope.siguiente = function() {
             if ($scope.seleccion != 'No importa') {
 
@@ -118,24 +123,18 @@ app.controller('testrecomendarCtrl', ['$scope', '$http', '$location',
                 $location.path('/resultadoTest');
             };
             $scope.seleccion = $scope.seleccionadas[$scope.indice];
-            // $scope.deshabilitarSiguiente = ($scope.indice === $scope.preguntas.length) ? true : false;
-            // $scope.appendRespuestas($scope.seleccion);
-
 
         };
 
+        //Se usa para verificar si la pregunta ya fue agregada al arreglo.
         $scope.preguntasArrayFiltro = function(item) {
-            // console.log(item);
             return (item.ID_PREGUNTAS == $scope.indice);
         };
 
+        //Se usa para verificar si la respuesta ya fue agregada al arreglo. 
         $scope.respuestasArrayFiltro = function(item) {
-            // console.log(item);
             return (item.ID_PREGUNTAS == $scope.indice);
         };
-
-
-
-
+        
     }
 ]);

@@ -1,6 +1,9 @@
 'use strict'
 app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
     function($scope, $http, $location) {
+
+
+        //Carga la variable del usuario logueado y la variable temporal del formulario. 
         $scope.inicializar = function() {
 
             $http.get("data/getFAdopcionPreguntas.php")
@@ -15,9 +18,10 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
 
         };
 
+        //Asigna a la variable preguntas sus respectivas respuestas. 
         $scope.encapsulada = function() {
 
-            var $promise = $http.post('data/resultadoAdopcion.php', $scope.id_form); //send data to user.php
+            var $promise = $http.post('data/resultadoAdopcion.php', $scope.id_form); 
             $promise.then(function(msg) {
 
                 for (var i = 0; i < msg.data.length; i++) {
@@ -29,12 +33,14 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
                 $scope.aceptarAdopcion.CORREOUSUARIO_NEW = msg.data[0].CORREO_PREGUNTA;
                 $scope.arrayCalificaciones.CorreoUsuario = msg.data[0].CORREO_PREGUNTA;
                 $scope.aceptarAdopcion.ID_MASCOTA = parseInt(msg.data[0].ID_MASC, 10);
-                $scope.aceptarAdopcion.COMENTARIO = 'solicitud de adopción';
+                $scope.aceptarAdopcion.COMENTARIO = 'Solicitud de adopción';
 
             });
         };
+
+        //Llama al php que escribe en la tabla adopciones con los datos de la solicitud cargada. 
         $scope.aceptar = function() {
-            var $promise = $http.post('data/adoptar.php', $scope.aceptarAdopcion); //send data to user.php
+            var $promise = $http.post('data/adoptar.php', $scope.aceptarAdopcion); 
             $promise.then(function(msg) {
 
                 if (msg.data === 'Correcto') {
@@ -56,6 +62,7 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
             });
         };
 
+        //Registra la calificación asignada al usuario en la tabla calificaciones ccon php. 
         $scope.subirCalificacion = function(pCalificacion, pMotivo) {
             $scope.arrayCalificaciones.Calificacion = pCalificacion;
             $scope.arrayCalificaciones.Motivo = pMotivo;
@@ -72,10 +79,12 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
             });
         };
 
+        //Devuelve a la ventana home. 
         $scope.cancelarCalificacion = function() {
             $location.path('/home');
         }
 
+        //Se devuelve a la página de notifcaciones. 
         $scope.atras = function() {
             $location.path('/notificaciones');
         };

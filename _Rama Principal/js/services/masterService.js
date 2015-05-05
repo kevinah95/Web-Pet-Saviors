@@ -1,27 +1,16 @@
 'use strict';
 app.factory('masterService', function($http,$cookies) {
     return {
-        
+        //Devuelve la información del usuario. 
         getUsuarioInfo: function(data,scope) {
-            var $promise = $http.post('data/getUsuarioInfo.php', data) //send data to user.php
+            var $promise = $http.post('data/getUsuarioInfo.php', data)
             .success(function(msg) {
             scope.masterUsuario = null;    
 			scope.masterUsuario = msg[0];
-			// console.log(msg);
-			// swal("Información",  scope.masterUsuario.NOMBRE, "success");
-            sessionStorage.user = JSON.stringify(scope.masterUsuario);
-            
-            
-            
+			sessionStorage.user = JSON.stringify(scope.masterUsuario);
+                        
 		});
-
-           
+  
         }
-
-
-        
-
-
     }
-
 });

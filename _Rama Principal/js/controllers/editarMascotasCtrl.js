@@ -3,13 +3,15 @@
 app.controller('editarMascotasCtrl', ['$scope', '$location', '$http', 'editarperfilmascotasService',
     function($scope, $location, $http, editarperfilmascotasService) {
 
+        // Hace una copia de la mascota para la comparación y carga los datos de salud. Carga el jQuery para la animación. 
         $scope.Iniciar = function(){
             $scope.masterMascota =  JSON.parse(sessionStorage.tempIDMascota);
             $scope.editadoMascota =  JSON.parse(sessionStorage.tempIDMascota);
             console.log($scope.editadoMascota);
             $scope.infoSalud = null;
-            $http.post('data/getSaludMascotas.php',$scope.editadoMascota.IDSalud).success(function(msg) { $scope.infoSalud = msg[0]
-                // console.log($scope.infoSalud);
+            $http.post('data/getSaludMascotas.php',$scope.editadoMascota.IDSalud).success(function(msg) { 
+
+                $scope.infoSalud = msg[0]
                 $scope.masterMascota.atrIdSalud = $scope.infoSalud.ID_SALUD;
                 $scope.masterMascota.atrVeterinario = $scope.infoSalud.NOMBRE_VETERINARIO;
                 $scope.masterMascota.atrEnfermedad = $scope.infoSalud.NOMBRE_ENFERMEDAD;
@@ -23,7 +25,6 @@ app.controller('editarMascotasCtrl', ['$scope', '$location', '$http', 'editarper
                 $scope.editadoMascota.atrMedicamentos = $scope.infoSalud.NOMBRE_MEDICAMENTOS;
                 $scope.editadoMascota.atrSeveridad = $scope.infoSalud.SEVERIDAD;
 
-                //console.log($scope.infoSalud.NOMBRE_TRATAMIENTO);
             });
 
 
@@ -50,6 +51,7 @@ app.controller('editarMascotasCtrl', ['$scope', '$location', '$http', 'editarper
             })
         };
 
+        //Compara si los datos son iguales. 
         $scope.verificarDatos = function() {
             $scope.iguales = angular.equals($scope.editadoMascota, $scope.masterMascota);
             if ($scope.iguales) {
@@ -60,6 +62,7 @@ app.controller('editarMascotasCtrl', ['$scope', '$location', '$http', 'editarper
 
         };
 
+        //Devuelve la página al catálogo cuando no se produjeron cambios. 
         $scope.NoCambios = function() {
             $location.path('/petCatalogue');
         }

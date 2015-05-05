@@ -16,7 +16,7 @@
 	  		<div class="col-md-1"><h5>{{post.Mascota}}</h5></div>
 	  		<div class="col-md-3"><h5>{{post.Comentarios}}</h5></div>
 	  		<div class="col-md-2"><button class="btn btn-info btn-sm" ng-click="guardarID(post.IdAdopcion)">Fotos</button>
-	  		<button class="btn btn-danger btn-sm" ng-click="devolver(post.Mascota,post.Adoptante,post.Rescatista,'Muy Necio',post.IdAdopcion)">Devolver</button>
+	  		<button class="btn btn-danger btn-sm" ng-click="abrirVentana(post.Mascota,post.Adoptante,post.Rescatista,post.IdAdopcion)">Devolver</button>
 	  		</div>
 	  	</div>
 	  </div>
@@ -31,4 +31,18 @@
         </div>
     </div>
 </footer>
+
+<div class="fondo" id="fondoDev"></div>
+	<div class="ventanaEmergente row" id="motivoDev">
+		<div class="col-lg-12 column" style="text-align:center">
+			<div class="panel" style="">
+				<h3>Motivo</h3>
+				<p>Escriba el motivo por el cual quiere devolver la mascotas</p>
+				<textarea rows=10 cols=50 id="motivoEspacio" ng-model="men.motivo"></textarea>
+				<button class="btn btn-success btn-sm" ng-click="devolver(post.Mascota,post.Adoptante,post.Rescatista,post.IdAdopcion)">Confirmar</button>
+				<button class="btn btn-danger btn-sm" ng-click="cancelar()">Cancelar</button>
+				<hr>
+			</div>
+		</div>
+	</div>
 </div><!--Container end-->

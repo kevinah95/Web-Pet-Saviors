@@ -10,10 +10,7 @@
 
 	$stid = oci_parse($conn, "begin :retorna := USUARIOS_PAQ.VERIFICAR_USUARIO( '".$user->mail."','".$user->pass."'); end;");
 	oci_bind_by_name($stid, ':retorna', $respuesta, 20);
-	// if (!$stid) {
-	// }else{
-	// };
-
+	
 	oci_execute($stid);
 	if(!empty($respuesta)){
 		

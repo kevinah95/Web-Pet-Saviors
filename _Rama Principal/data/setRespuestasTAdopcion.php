@@ -37,10 +37,6 @@
 		oci_execute($stid);
 	}
 	
-	
-	
 	echo 'Enviada';
-	
-	
-		
+			
 ?>

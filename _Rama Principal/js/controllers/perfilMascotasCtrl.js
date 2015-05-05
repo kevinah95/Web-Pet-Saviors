@@ -3,6 +3,7 @@
 app.controller('perfilMascotasCtrl', ['$scope', '$location','$http', function($scope,$location,$http){
 	
 
+  //Carga el estado de salud y los datos de la variable temporal de la mascota seleccionada, así como el jQuery. 
 	$scope.inicializar = function() {
     $scope.infoMascota = JSON.parse(sessionStorage.tempIDMascota);
     $scope.infoSalud = null;
@@ -31,11 +32,16 @@ app.controller('perfilMascotasCtrl', ['$scope', '$location','$http', function($s
     })
   	};
   
+  //Llama editar Mascotas. 
   $scope.editarPerfil = function(){
   		$location.path('/editarMascotas');
   	};
 
+
+  //Se devuelve a la página de Mascotas. 
   $scope.volver = function(){
   		$location.path('/pet');	
   	};
+
+    
 }]);
