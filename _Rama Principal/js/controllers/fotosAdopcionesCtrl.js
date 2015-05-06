@@ -19,13 +19,20 @@ app.controller('fotosAdopcionesCtrl', function($scope,$location,$http){
     $scope.agregar = function(){
         $scope.infoAdopcion = sessionStorage.getItem('tempIDAdopcion');
         $scope.mensaje.idAdop = $scope.infoAdopcion;
-        console.log($scope.mensaje.url);
-        console.log($scope.mensaje.idAdop);
         $http.post('data/agregarFoto.php',$scope.mensaje)
         .success(function(data){
         $scope.posts = data;})
         $location.path('/adopciones');
     }
+    $scope.soyYo = function(){
+        $scope.infoAdoptante = sessionStorage.getItem('tempIDAdoptante');
+        if (JSON.parse(sessionStorage.getItem('user')) != null){
+            $scope.usuario = JSON.parse(sessionStorage.getItem('user'));
+            return($scope.usuario.CORREOUSUARIO === $scope.infoAdoptante) ? true : false;
+        }
+        return true;
+    }
+
 
     //Llama al php que borra fotos de la base. 
     $scope.eliminar = function(idFoto){
