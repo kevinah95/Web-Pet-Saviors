@@ -25,14 +25,14 @@ app.controller('resultadoadopcionCtrl', ['$scope', '$http', '$location',
             $promise.then(function(msg) {
 
                 for (var i = 0; i < msg.data.length; i++) {
-                    $scope.preguntas[i].respuesta = msg.data[i].CONT_REPUESTA;
+                    $scope.preguntas[i].respuesta = msg.data[i].CONT_RESPUESTA;
                 };
 
                 $scope.aceptarAdopcion.CORREOUSUARIO_OLD = msg.data[0].CORREO_RESPONDE;
                 $scope.arrayCalificaciones.CorreoCalificador = msg.data[0].CORREO_RESPONDE;
                 $scope.aceptarAdopcion.CORREOUSUARIO_NEW = msg.data[0].CORREO_PREGUNTA;
                 $scope.arrayCalificaciones.CorreoUsuario = msg.data[0].CORREO_PREGUNTA;
-                $scope.aceptarAdopcion.ID_MASCOTA = parseInt(msg.data[0].ID_MASC, 10);
+                $scope.aceptarAdopcion.ID_MASCOTA = parseInt(msg.data[0].ID_MASCOTA, 10);
                 $scope.aceptarAdopcion.COMENTARIO = 'Solicitud de adopción';
 
             });
