@@ -23,7 +23,8 @@ app.factory('editarperfilService', function($http, $location, masterService) {
 
                         });
                     
-                    $location.path('/perfil');
+                    $location.path('/home');
+
 
                 };
                 console.log(msg.data + "   " + msg);

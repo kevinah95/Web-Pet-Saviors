@@ -2,8 +2,7 @@
 
 app.controller('perfilCtrl', ['$scope', '$location', function($scope,$location){
 	
-
-
+    
     //Carga la variable global del usuario logueado. 
     $scope.inicializar = function() {
     	$scope.masterUsuario=JSON.parse(sessionStorage.user); 
