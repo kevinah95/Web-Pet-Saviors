@@ -7,7 +7,7 @@
         trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
     }
 
-    $stid = oci_parse($conn, 'SELECT * FROM Mascotas');
+    $stid = oci_parse($conn, 'SELECT * FROM Mascotas ORDER BY FECHA_CREACION DESC');
     oci_execute($stid);
 
     // Convierte los datos de la base a Json

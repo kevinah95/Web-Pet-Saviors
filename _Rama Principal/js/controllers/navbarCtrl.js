@@ -70,8 +70,14 @@ app.controller('navbarCtrl', ['$scope','loginService', '$location', function($sc
 	$scope.imAdmin=function(){
 		if (JSON.parse(sessionStorage.getItem('user')) != null) { 
 			$scope.usuario = JSON.parse(sessionStorage.getItem('user'));
+			
+			return ($scope.usuario.ES_ADMINISTRADOR === 1) ? true : false;
+
 		}
-		return ($scope.usuario.ES_ADMINISTRADOR === 1) ? true : false;
+		else{
+			return false;
+		}
+
 	};
 	
 }]);
