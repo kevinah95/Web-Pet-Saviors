@@ -5,6 +5,7 @@ app.controller('petCatalogueCtrl', ['$scope','$http', '$location',function($scop
 	//Carga el filtro. 
 	$scope.Iniciar= function() {
 		$scope.textToFilter = "";
+		$scope.User = JSON.parse(sessionStorage.getItem("user"));
 	}
 
 	//Guarda el id y los datos de la mascota seleccionada y redirecciona al perfil de mascotas. 
