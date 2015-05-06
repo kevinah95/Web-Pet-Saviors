@@ -1,7 +1,7 @@
 <?php           
     //Carga los datos de login
     $Objeto=json_decode(file_get_contents('php://input'));
-
+    
     $conn = oci_connect('PetSaviors', 'PetSaviors', 'localhost/DBPrueba', 'AL32UTF8');
     if (!$conn) {
         $e = oci_error();
