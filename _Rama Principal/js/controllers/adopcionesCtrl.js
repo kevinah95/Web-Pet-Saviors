@@ -7,8 +7,9 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
 		.success(function(data) { 
 		$scope.posts = data; })
 	}
-	$scope.guardarID = function(pID){
+	$scope.guardarID = function(pID,pAdoptante){
 		sessionStorage.tempIDAdopcion = pID;
+		sessionStorage.tempIDAdoptante = pAdoptante;
 		$location.path('/fotosAdopciones');
 	}
 	$scope.abrirVentana = function(pMascota,pAdoptante,pRescatista,pAdopcion) {
@@ -27,6 +28,13 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
         dialog.style.left = (winWidth/2) - 480/2 + "px";
         dialog.style.top = (winHeight/2) - 150 + "px";
 	}
+	$scope.soyYo = function(pAdoptante){
+        if (JSON.parse(sessionStorage.getItem('user')) != null){
+            $scope.usuario = JSON.parse(sessionStorage.getItem('user'));
+            return($scope.usuario.CORREOUSUARIO === pAdoptante) ? true : false;
+        }
+        return true;
+    }
 
 	$scope.devolver = function(){
 		$scope.mensaje = 
@@ -37,7 +45,6 @@ app.controller('adopcionesCtrl', function($scope,$location,$http){
                          ADOPCION: sessionStorage.getItem('Adopcion'),
                          MOTIVO: $scope.men.motivo
                      };
-        console.log($scope.mensaje);
 		$http.post('data/devolver.php',$scope.mensaje)
 		.success(function(msg){
         console.log(msg);})

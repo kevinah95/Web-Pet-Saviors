@@ -15,8 +15,8 @@
 	  		<div class="col-md-3"><h5>{{post.Adoptante}}</h5></div>
 	  		<div class="col-md-1"><h5>{{post.Mascota}}</h5></div>
 	  		<div class="col-md-3"><h5>{{post.Comentarios}}</h5></div>
-	  		<div class="col-md-2"><button class="btn btn-info btn-sm" ng-click="guardarID(post.IdAdopcion)">Fotos</button>
-	  		<button class="btn btn-danger btn-sm" ng-click="abrirVentana(post.Mascota,post.Adoptante,post.Rescatista,post.IdAdopcion)">Devolver</button>
+	  		<div class="col-md-2"><button class="btn btn-info btn-sm" ng-click="guardarID(post.IdAdopcion,post.Adoptante)">Fotos</button>
+	  		<button class="btn btn-danger btn-sm" ng-show="soyYo(post.Adoptante)" ng-click="abrirVentana(post.Mascota,post.Adoptante,post.Rescatista,post.IdAdopcion)">Devolver</button>
 	  		</div>
 	  	</div>
 	  </div>

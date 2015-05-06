@@ -49,6 +49,9 @@ app.controller('usersCtrl', ['$scope','$http', '$location', function($scope,$htt
 		swal(  {title:'Cambio realizado'}, function(){history.go(0);} );
 	}
 
+	$scope.Estrellas = function(param) {
+        return new Array(parseInt(param,10));   
+    }
 	//Conecta de forma global y carga todos los usuarios de la base. 
 	$http.get('data/connectUserTable.php').success(function(data) { $scope.posts = data; });
 

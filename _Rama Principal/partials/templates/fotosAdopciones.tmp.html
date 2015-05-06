@@ -9,9 +9,9 @@
 	  	  <div class="col-lg-2"></div>
 	  	  <div class="col-lg-8" ng-model="col">
 	  		<div class="input-group">
-		      	<input type="text" class="form-control" ng-model="mensaje.url" placeholder="Agrega una nueva imagen. Pega el URL aquí">
+		      	<input type="text" class="form-control" ng-show="soyYo()" ng-model="mensaje.url" placeholder="Agrega una nueva imagen. Pega el URL aquí">
 			      	<span class="input-group-btn">
-			        	<button class="btn btn-default" ng-click="agregar()">Insertar Imagen</button>
+			        	<button class="btn btn-default" ng-show="soyYo()" ng-click="agregar()">Insertar Imagen</button>
 			      	</span>
 		    	</div><!-- /input-group -->
 		    </div>
@@ -26,7 +26,7 @@
 			      <img ng-src={{post.Foto}}>
 			      <div class="caption">
 			      	<!--{{post.IdFoto}}-->
-			        <p><button class="btn btn-danger" ng-click="eliminar(post.IdFoto)">Eliminar</button> 
+			        <p><button class="btn btn-danger" ng-show="soyYo()" ng-click="eliminar(post.IdFoto)">Eliminar</button> 
 			      </div>
 			    </div>
     		</div>

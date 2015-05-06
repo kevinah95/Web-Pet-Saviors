@@ -40,11 +40,17 @@
         <div>
             <div class="row">
                 <div class="col-lg-2 col-sm-2 text-center" ng-repeat = 'post in posts | filter:search:strict'>
-                    <img class="img-circle img-responsive img-center" ng-src={{post.Foto}} height="200" width="200" alt="">
+                    <img class="img-circle img-responsive img-center" ng-src={{post.Foto}} height="200" width="200" alt="" ng-init=foo(post.PromCal)>
                     <h3>{{post.Nombre}} {{post.P_Apellido}}
                         <!--<small>Rescatista</small>-->
                     </h3>
                     <p>Correo: {{post.Correo}}</p>
+                    <p><label ng-repeat= 'item in Estrellas(post.PromCal)  track by $index' class="rating-star"></label></p>
+
+
+                    <hr>
+                    <p>Teléfono: {{post.Telefono}}</p>
+
 
                     <div ng-show = 'imAdmin()'>
                         <div ng-hide='imThisGuy(post)'>
