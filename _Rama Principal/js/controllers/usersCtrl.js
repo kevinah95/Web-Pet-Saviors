@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('usersCtrl', ['$scope','$http', '$location', function($scope,$http,usersService,$location){
+app.controller('usersCtrl', ['$scope','$http', '$location', function($scope,$http,$location){
 	
 	//Carga la página de usuarios 
 	$scope.users=function(){

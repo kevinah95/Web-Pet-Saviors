@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('petCatalogueCtrl', ['$scope','$http', '$location',function($scope,$http,petService,$location){
+app.controller('petCatalogueCtrl', ['$scope','$http', '$location',function($scope,$http,$location){
 	
 	//Carga el filtro. 
 	$scope.Iniciar= function() {

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('petCtrl', ['$scope','$http', '$location', function($scope,$http,petService,$location){
+app.controller('petCtrl', ['$scope','$http', '$location', function($scope,$http,$location){
 
 	//Llama a la página de mascotas. 
 	$scope.pet=function(){
