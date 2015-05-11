@@ -8,7 +8,6 @@
         trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
     };
 
-
     $sql= "begin 
             ADOPCIONES_PKG.adoptar(
             :pOldUser,
