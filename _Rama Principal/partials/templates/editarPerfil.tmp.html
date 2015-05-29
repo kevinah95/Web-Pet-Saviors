@@ -38,6 +38,11 @@
                                             <!-- <p ng-show="editadoUsuario.TELEFONO.$error.pattern">Numbers only, please.</p> -->
                                         </tr>
                                         <tr class= "text-center">
+                                            <td>Contraseña</td>
+                                            <td><input id="inputContrasenia" type="text" placeholder="{{editadoUsuario.CONTRASENIA}}" ng-model="editadoUsuario.CONTRASENIA" required></tr>
+                                            <!-- <p ng-show="editadoUsuario.TELEFONO.$error.pattern">Numbers only, please.</p> -->
+                                        </tr>
+                                        <tr class= "text-center">
                                             <td>Es usted un usuario de tipo: </td>
                                             <td>
                                                 <p><input type = "checkbox" ng-checked = "{{editadoUsuario.ES_ADOPTANTE}}" ng-model="ADOPTANTE" ng-click="booleanos()"> Adoptante</p>
