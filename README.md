@@ -1,7 +1,7 @@
 # Web-Pet-Saviors
-#####Proyecto#####
+##### Proyecto#####
 Pet Saviors - Adopción de Mascotas
-#####Integrantes: 
+##### Integrantes: 
 * Jose Aguilar
 * Kevin Hernández
 * Julián Méndez
